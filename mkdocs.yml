@@ -1,26 +1,35 @@
 site_name: Data Engineering Wiki
+
 theme:
   name: material
   features:
-    - navigation.instant
-    - search.highlight
+    - navigation.instant       # snappy page loads
+    - search.highlight         # highlight term on target page
 
-nav:                          # ← controls the sidebar
+nav:                             # controls the sidebar
   - Home: index.md
+
   - Courses:
       - SQL Admin: courses/sql-admin/index.md
       - Python: courses/python/index.md
+      - Power BI Admin:
+          # - Overview: courses/power-bi-service/index.md
+          - Cheat Sheet (HTML): courses/power-bi-service/powerbi-service-cheatsheet.html
+
+  - Cheat Sheets:
+      - Overview: cheat-sheets/index.md
+      - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.html
 
 markdown_extensions:
-  - attr_list
-  - md_in_html
-  - pymdownx.superfences:
+  - attr_list                   # {: .class } support
+  - md_in_html                  # allow Markdown inside raw HTML
+  - pymdownx.superfences:       # extra code-block powers
       custom_fences:
         - name: mermaid
-          class: mermaid
-  - pymdownx.emoji:
+          class: mermaid        # ```mermaid``` diagrams
+  - pymdownx.emoji:             # Material Design icons via :material-*:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
-  - search                    # full-text search (default)
+  - search                      # built-in full-text search

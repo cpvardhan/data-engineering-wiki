@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Reusable Web Document Style
+   - Author: Cp
+   - Description: A clean, professional style for technical documents and cheat sheets.
+   ========================================================================== */
+
+/* --- Base & Typography --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Lighter, cleaner background */
+    color: #343a40; /* Darker text for better contrast */
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Layout Containers --- */
+.main-container {
+    width: 100%;
+    max-width: 900px; /* A balanced width for readability */
+}
+
+.section {
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    border-left: 6px solid #005c97; /* Main accent color */
+}
+
+/* --- Headings & Text Elements --- */
+h1, h2, h3 {
+    color: #005c97; /* A deep, professional blue */
+    border-bottom: 3px solid #e9ecef;
+    padding-bottom: 0.6rem;
+    margin-top: 2.5rem;
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 0.5rem;
+    border-bottom: none; /* Cleaner look for the main title */
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    border-bottom-style: dashed;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05em;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.25em;
+    color: #495057;
+    font-weight: 400;
+    max-width: 750px;
+    margin: 0 auto 1.5rem auto;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #005c97;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* --- Special Text & Code Blocks --- */
+.highlight {
+    background-color: #d4edff; /* Light blue highlight */
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #004085;
+}
+
+code, pre {
+    background-color: #e9ecef;
+    padding: 0.2em 0.4em;
+    border-radius: 5px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+pre {
+    padding: 1.2em;
+    margin: 1em 0;
+    overflow-x: auto;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Tables --- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners apply to header */
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(to right, #005c97, #006faa); /* Gradient header */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+td b {
+    color: #005c97; /* Make bolded text in cells stand out */
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef; /* Hover effect for rows */
+}
+
+/* --- Diagram Containers (for Mermaid.js or other embeds) --- */
+.diagram-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    overflow-x: auto;
+    text-align: center;
+    border-top: 5px solid #005c97; /* Accent border */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.1em;
+    color: #495057;
+    padding: 2.5rem;
+    background-color: #e9ecef;
+    border-top: 4px solid #005c97;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .intro-text {
+        font-size: 1.1em;
+    }
+}
