@@ -11,7 +11,13 @@
         mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
     </script>
     <style>
-        /* Base styles for the body */
+        /* ==========================================================================
+           Reusable Web Document Style
+           - Author: Cp
+           - Description: A clean, professional style for technical documents and cheat sheets.
+           ========================================================================== */
+
+        /* --- Base & Typography --- */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -26,14 +32,24 @@
             align-items: center;
         }
 
-        /* Main container for consistent width and centering */
+        /* --- Layout Containers --- */
         .main-container {
             width: 100%;
             max-width: 900px;
-            /* Increased max-width for a balanced layout */
+            /* A balanced width for readability */
         }
 
-        /* Styling for main headings */
+        .section {
+            margin-bottom: 3rem;
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            border-left: 6px solid #005c97;
+            /* Main accent color */
+        }
+
+        /* --- Headings & Text Elements --- */
         h1,
         h2,
         h3 {
@@ -50,7 +66,7 @@
             font-size: 2.8em;
             margin-bottom: 0.5rem;
             border-bottom: none;
-            /* Remove border from main title for a cleaner look */
+            /* Cleaner look for the main title */
         }
 
         h2 {
@@ -62,7 +78,11 @@
             border-bottom-style: dashed;
         }
 
-        /* Intro paragraph styling */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05em;
+        }
+
         .intro-text {
             text-align: center;
             font-size: 1.25em;
@@ -70,10 +90,8 @@
             font-weight: 400;
             max-width: 750px;
             margin: 0 auto 1.5rem auto;
-            /* Center the paragraph */
         }
 
-        /* Horizontal rule styling */
         hr {
             border: 0;
             border-top: 2px solid #005c97;
@@ -81,7 +99,16 @@
             width: 100%;
         }
 
-        /* Code and preformatted text styling */
+        /* --- Special Text & Code Blocks --- */
+        .highlight {
+            background-color: #d4edff;
+            /* Light blue highlight */
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #004085;
+        }
+
         code,
         pre {
             background-color: #e9ecef;
@@ -99,7 +126,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
-        /* Table styling */
+        /* --- Tables --- */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -127,6 +154,7 @@
 
         td b {
             color: #005c97;
+            /* Make bolded text in cells stand out */
         }
 
         tr:nth-child(even) {
@@ -138,7 +166,7 @@
             /* Hover effect for rows */
         }
 
-        /* Container for Mermaid diagrams */
+        /* --- Diagram Containers (for Mermaid.js or other embeds) --- */
         .diagram-container {
             background: white;
             padding: 1.5rem;
@@ -151,37 +179,7 @@
             /* Accent border */
         }
 
-        /* Styling for main content sections */
-        .section {
-            margin-bottom: 3rem;
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-            border-left: 6px solid #005c97;
-        }
-
-        .section p,
-        .section ul {
-            margin-bottom: 1.2rem;
-            font-size: 1.05em;
-        }
-
-        .section ul li {
-            padding-left: 0.5rem;
-        }
-
-        /* Highlighted text */
-        .highlight {
-            background-color: #d4edff;
-            /* Light blue highlight */
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #004085;
-        }
-
-        /* Footer styling */
+        /* --- Footer --- */
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -194,7 +192,7 @@
             width: 100%;
         }
 
-        /* Responsive adjustments for smaller screens */
+        /* --- Responsive Adjustments --- */
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
@@ -212,7 +210,6 @@
             h2 {
                 font-size: 1.7em;
             }
-
 
             h3 {
                 font-size: 1.4em;
