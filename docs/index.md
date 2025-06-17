@@ -7,7 +7,7 @@
          alt="SQL Admin"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      SQL&nbsp;Admin
+      SQL Admin
     </span>
   </a>
 
@@ -25,7 +25,7 @@
          alt="Power BI Admin"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      Power BI&nbsp;Admin
+      Power BI Admin
     </span>
   </a>
 
