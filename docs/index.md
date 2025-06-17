@@ -9,7 +9,7 @@
   **[Python](courses/python/index.md)**
 
 - <img src="assets/logos/powerbi.png"     alt="Power BI Admin" width="64" />  
-  **[Power BI Admin](courses/power-bi-admin/powerbi-service-cheatsheet.html)**
+  **[Power BI Admin / Services](courses/power-bi-admin/powerbi-service-cheatsheet.html)**
 
 - <img src="assets/logos/cheat-sheet.png" alt="Cheat Sheets"   width="64" />  
   **[Cheat Sheets](cheat-sheets/index.md)**
