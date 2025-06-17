@@ -1,7 +1,12 @@
 name: Build & Deploy MkDocs
+
 on:
   push:
     branches: [ "main" ]
+
+permissions:        # ← add this block (1-2 lines)
+  contents: write   # allow push to gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
