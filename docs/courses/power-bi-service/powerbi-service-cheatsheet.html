@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🚀 Power BI Service Cheat Sheet</title>
+
+    <!-- Mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
-        // Initialize Mermaid.js
         mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
     </script>
+
     <style>
-        /* ==========================================================================
+        /* ======================================================================
            Reusable Web Document Style
-           - Author: Cp
-           - Description: A clean, professional style for technical documents and cheat sheets.
-           ========================================================================== */
+           ====================================================================== */
 
         /* --- Base & Typography --- */
         body {
@@ -23,20 +23,19 @@
             margin: 0;
             padding: 2rem;
             background-color: #f8f9fa;
-            /* Lighter, cleaner background */
             color: #343a40;
-            /* Darker text for better contrast */
             line-height: 1.7;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            /* Stretch full width */
         }
 
         /* --- Layout Containers --- */
         .main-container {
             width: 100%;
-            max-width: 900px;
-            /* A balanced width for readability */
+            /* Full-width container */
+            /* max-width: 900px;  <-- removed */
         }
 
         .section {
@@ -46,7 +45,6 @@
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
             border-left: 6px solid #005c97;
-            /* Main accent color */
         }
 
         /* --- Headings & Text Elements --- */
@@ -54,7 +52,6 @@
         h2,
         h3 {
             color: #005c97;
-            /* A deep, professional blue */
             border-bottom: 3px solid #e9ecef;
             padding-bottom: 0.6rem;
             margin-top: 2.5rem;
@@ -66,7 +63,6 @@
             font-size: 2.8em;
             margin-bottom: 0.5rem;
             border-bottom: none;
-            /* Cleaner look for the main title */
         }
 
         h2 {
@@ -102,7 +98,6 @@
         /* --- Special Text & Code Blocks --- */
         .highlight {
             background-color: #d4edff;
-            /* Light blue highlight */
             padding: 0.2em 0.4em;
             border-radius: 4px;
             font-weight: 600;
@@ -134,7 +129,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
             overflow: hidden;
-            /* Ensures rounded corners apply to header */
         }
 
         th,
@@ -146,7 +140,6 @@
 
         th {
             background: linear-gradient(to right, #005c97, #006faa);
-            /* Gradient header */
             color: white;
             font-weight: bold;
             font-size: 1.1em;
@@ -154,7 +147,6 @@
 
         td b {
             color: #005c97;
-            /* Make bolded text in cells stand out */
         }
 
         tr:nth-child(even) {
@@ -163,10 +155,9 @@
 
         tr:hover {
             background-color: #e9ecef;
-            /* Hover effect for rows */
         }
 
-        /* --- Diagram Containers (for Mermaid.js or other embeds) --- */
+        /* --- Diagram Containers --- */
         .diagram-container {
             background: white;
             padding: 1.5rem;
@@ -176,7 +167,6 @@
             overflow-x: auto;
             text-align: center;
             border-top: 5px solid #005c97;
-            /* Accent border */
         }
 
         /* --- Footer --- */
@@ -226,6 +216,7 @@
 
     <div class="main-container">
 
+        <!-- ====== Title & Intro ====== -->
         <h1>🚀 Power BI Service Cheat Sheet</h1>
         <p class="intro-text">
             Master the essential concepts of Power BI Service for publishing, sharing, and collaborating on your data
@@ -233,17 +224,20 @@
         </p>
         <hr />
 
+        <!-- ====== Sections (unchanged content) ====== -->
+        <!-- === Service Overview === -->
         <section class="section">
             <h2>🟡 Power BI Service Overview: The Cloud Command Center</h2>
             <p>
-                The <strong>Power BI Service</strong> is the secure, cloud-based platform by Microsoft that serves
-                as the central hub for your business intelligence ecosystem. It's where the magic of data sharing,
-                collaboration,
-                and consumption truly happens after you've built your reports in Power BI Desktop.
+                The <strong>Power BI Service</strong> is the secure, cloud-based platform by Microsoft that serves as
+                the central hub
+                for your business intelligence ecosystem. It's where the magic of data sharing, collaboration, and
+                consumption truly
+                happens after you've built your reports in Power BI Desktop.
             </p>
             <ul>
-                <li>The definitive online repository for your <span class="highlight"><strong>.PBIX</strong>
-                        files</span>, encompassing interactive reports, dynamic dashboards, and powerful datasets.</li>
+                <li>The definitive online repository for your <span class="highlight"><strong>.PBIX</strong></span>
+                    files, encompassing interactive reports, dynamic dashboards, and powerful datasets.</li>
                 <li>Facilitates <span class="highlight"><strong>secure sharing and seamless
                             collaboration</strong></span> across your organization and with external stakeholders.</li>
                 <li>Enables automated <span class="highlight"><strong>scheduled data refreshes</strong></span> and
@@ -271,11 +265,13 @@ sequenceDiagram
             </div>
         </section>
 
+        <!-- === Workspaces === -->
         <section class="section">
             <h2>🗂️ Workspaces: Your Collaborative Sandboxes</h2>
             <p>
                 A <strong>Workspace</strong> in Power BI Service is a dedicated container designed to organize and
-                foster collaboration on related Power BI content like Reports, Dashboards, Datasets, and Dataflows.
+                foster collaboration
+                on related Power BI content like Reports, Dashboards, Datasets, and Dataflows.
             </p>
             <ul>
                 <li><span class="highlight"><strong>My Workspace:</strong></span> Your personal, private area for
@@ -306,6 +302,7 @@ graph LR
             </ul>
         </section>
 
+        <!-- === Reports === -->
         <section class="section">
             <h2>📊 Reports: The Interactive Storytellers</h2>
             <p>
@@ -328,11 +325,13 @@ graph LR
             </ul>
         </section>
 
+        <!-- === Dashboards === -->
         <section class="section">
             <h2>🖼️ Dashboards: Executive Snapshots</h2>
             <p>
                 A <strong>Dashboard</strong> provides a concise, single-page, high-level overview of key business
-                metrics by displaying critical visuals (tiles) pinned from one or more reports.
+                metrics by displaying
+                critical visuals (tiles) pinned from one or more reports.
             </p>
             <ul>
                 <li>Uniquely created <span class="highlight"><strong>only within the Power BI Service</strong></span>.
@@ -353,11 +352,13 @@ graph LR
             </ul>
         </section>
 
+        <!-- === Report vs Dashboard === -->
         <section class="section">
             <h2>🆚 Report vs Dashboard: A Quick Comparison</h2>
             <p>
                 While both reports and dashboards visualize data, their purpose and functionality differ significantly.
-                Understanding these distinctions is vital.
+                Understanding these
+                distinctions is vital.
             </p>
             <table>
                 <thead>
@@ -371,7 +372,7 @@ graph LR
                     <tr>
                         <td><b>Pages</b></td>
                         <td>Multi-page for detailed analysis</td>
-                        <td>Single-page canvas (a "one-pager")</td>
+                        <td>Single-page canvas (a “one-pager”)</td>
                     </tr>
                     <tr>
                         <td><b>Creation Tool</b></td>
@@ -402,6 +403,7 @@ graph LR
             </table>
         </section>
 
+        <!-- === Apps === -->
         <section class="section">
             <h2>📦 Power BI Apps: Simplified Distribution</h2>
             <p>
@@ -454,6 +456,7 @@ graph LR
             </table>
         </section>
 
+        <!-- === Licensing === -->
         <section class="section">
             <h2>💳 Power BI License Types & Pricing</h2>
             <p>
@@ -501,14 +504,17 @@ graph LR
                 region and enterprise agreements.</p>
         </section>
 
+        <!-- === Security === -->
         <section class="section">
             <h2>🔐 Power BI Security: Safeguarding Your Data</h2>
             <p>
                 Power BI provides robust features, including workspace roles and Row-Level Security (RLS), to ensure
                 sensitive data is protected and accessible only to authorized users.
             </p>
+
             <h3>Workspace Roles: Controlling Collaboration</h3>
             <p>Assigning appropriate workspace roles is the first line of defense for content security.</p>
+
             <div class="diagram-container">
                 <pre class="mermaid">
 graph TD
@@ -518,6 +524,7 @@ graph TD
     Workspace --> Viewer[Viewer 👀]
                 </pre>
             </div>
+
             <table>
                 <thead>
                     <tr>
@@ -574,6 +581,7 @@ sequenceDiagram
                 BI Service.</p>
         </section>
 
+        <!-- === Additional Security & Best Practices === -->
         <section class="section">
             <h2>🛡️ Additional Security Layers & Best Practices</h2>
             <p>
@@ -611,10 +619,11 @@ sequenceDiagram
                     <tr>
                         <td><b>Sensitivity Labels</b></td>
                         <td>Integration with <span class="highlight"><strong>Microsoft Purview</strong></span> allows
-                            classifying reports (e.g., "Confidential").</td>
+                            classifying reports (e.g., “Confidential”).</td>
                     </tr>
                 </tbody>
             </table>
+
             <h3>Best Practices for a Secure Environment:</h3>
             <ul>
                 <li>Apply the <span class="highlight"><strong>principle of least privilege</strong></span>: grant users
@@ -630,6 +639,7 @@ sequenceDiagram
             </ul>
         </section>
 
+        <!-- === Refresh & Gateways === -->
         <section class="section">
             <h2>🔄 Data Refresh & Gateways: Keeping Insights Fresh</h2>
             <p>
@@ -663,6 +673,7 @@ sequenceDiagram
             </div>
         </section>
 
+        <!-- === Other Components === -->
         <section class="section">
             <h2>⚙️ Other Key Service Components</h2>
             <p>
@@ -696,13 +707,13 @@ sequenceDiagram
     Dataflows->>Datamarts: Consume Prepared Data
     Datasets->>Reports: Create Reports
     Datamarts->>Reports: Create Reports
-
                 </pre>
                 <p style="font-size: 0.9em; color: #777;">These components enhance data preparation, storage, and
                     lifecycle management within the Service.</p>
             </div>
         </section>
 
+        <!-- ====== Footer ====== -->
         <footer>
             <p>Empower your data journey! ✨</p>
             <p>This cheat sheet is designed as a quick reference for key Power BI Service concepts.</p>
