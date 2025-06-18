@@ -1,52 +1,71 @@
-<!-- =======================  Course Library cards ======================= -->
+<!-- =======================  Course Library cards  ======================= -->
 <link rel="stylesheet" href="webpage_style.css">
 
 <style>
-/* 2 × 2 grid ----------------------------------------------------------- */
-.grid.cards    { display:grid; grid-template-columns:repeat(2,1fr);
-                 gap:2rem; max-width:700px; margin:0 auto; }
+/* -----------------------------------------------------------------
+   2 × 2 grid wrapper –- unchanged
+-------------------------------------------------------------------*/
+.grid.cards      { display:grid; grid-template-columns:repeat(2,1fr);
+                   gap:2rem; max-width:700px; margin:0 auto; }
 
-/* full-button look ---------------------------------------------------- */
-.card-link     { display:block; background:#fff; border-radius:12px;
-                 overflow:hidden; box-shadow:0 2px 10px #0003;
-                 transition:transform .15s ease; text-decoration:none; }
+/* -----------------------------------------------------------------
+   Card as a horizontal split: 50 % logo | 50 % text
+-------------------------------------------------------------------*/
+.card-link       { display:flex;                 /* NEW: flex row       */
+                   height:120px;                 /* set your preferred  */
+                   background:#fff; border-radius:12px;
+                   overflow:hidden; box-shadow:0 2px 10px #0003;
+                   transition:transform .15s ease; text-decoration:none; }
 .card-link:hover { transform:translateY(-6px); }
 
-/* coloured badge (top bar) ------------------------------------------- */
-.card-badge    { display:flex; align-items:center; gap:.5rem;
-                 justify-content:center; height:56px; /* badge height  */
-                 font-weight:600; color:#fff; font-size:.95rem; }
-.badge-sql     { background:#0288d1; }   /* tweak colours as desired   */
-.badge-python  { background:#f9c74f; color:#502f00; }
-.badge-powerbi { background:#ffb300; color:#472700; }
-.badge-cheat   { background:#0288d1; }
+/* --- left-side image area --------------------------------------- */
+.card-img        { flex:0 0 50%;                 /* fixed 50 % width    */
+                   display:flex; justify-content:center; align-items:center;
+                   background:#f1f3f4; }         /* subtle backdrop     */
+.card-img img    { max-width:80%; max-height:80%; object-fit:contain; }
 
-/* hide the lower label completely ------------------------------------ */
-.card-label    { display:none; }
+/* --- right-side label area -------------------------------------- */
+.card-text       { flex:1; display:flex; justify-content:center;
+                   align-items:center; font-weight:600; font-size:1rem;
+                   color:#fff; }
+
+/* colour themes for the right half ------------------------------- */
+.sql       { background:#0288d1; }   /* light blue  */
+.python    { background:#f9c74f; color:#502f00; }
+.powerbi   { background:#ffb300; color:#472700; }
+.cheat     { background:#009688; }   /* teal        */
 </style>
 
 ## 📚 Course Library
 
 <div class="grid cards" markdown="1">
 
-[<span class="card-badge badge-sql">
-   <img src="assets/logos/sql-admin.png" alt="" width="20" height="20" loading="lazy">
-   SQL Admin
- </span>](courses/sql-admin/){ .card-link }
+<a href="courses/sql-admin/" class="card-link sql">
+  <div class="card-img">
+    <img src="assets/logos/sql-admin.png" alt="SQL Admin">
+  </div>
+  <div class="card-text">SQL&nbsp;Admin</div>
+</a>
 
-[<span class="card-badge badge-python">
-   <img src="assets/logos/python.png" alt="" width="20" height="20" loading="lazy">
-   Python
- </span>](courses/python/){ .card-link }
+<a href="courses/python/" class="card-link python">
+  <div class="card-img">
+    <img src="assets/logos/python.png" alt="Python">
+  </div>
+  <div class="card-text">Python</div>
+</a>
 
-[<span class="card-badge badge-powerbi">
-   <img src="assets/logos/powerbi.png" alt="" width="20" height="20" loading="lazy">
-   Power BI Service & Admin 
- </span>](courses/power-bi-service/powerbi-service-cheatsheet.html){ .card-link }
+<a href="courses/power-bi-service/powerbi-service-cheatsheet.html" class="card-link powerbi">
+  <div class="card-img">
+    <img src="assets/logos/powerbi.png" alt="Power BI">
+  </div>
+  <div class="card-text">Power BI&nbsp;Admin</div>
+</a>
 
-[<span class="card-badge badge-cheat">
-   <img src="assets/logos/cheatsheet.png" alt="" width="20" height="20" loading="lazy">
-   Cheat Sheets
- </span>](cheat-sheets/){ .card-link }
+<a href="cheat-sheets/" class="card-link cheat">
+  <div class="card-img">
+    <img src="assets/logos/cheatsheet.png" alt="Cheat Sheets">
+  </div>
+  <div class="card-text">Cheat Sheets</div>
+</a>
 
 </div>
