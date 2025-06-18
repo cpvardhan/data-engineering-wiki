@@ -4,4 +4,4 @@ permalink: /courses/python/
 ---
 # :material-language-python: Python
 
-(Coming soon!)
+(Coming soon! )
