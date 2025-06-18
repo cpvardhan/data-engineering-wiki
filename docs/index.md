@@ -21,7 +21,7 @@
   <div class="card-img">
     <img src="assets/logos/powerbi.png" alt="Power BI Icon">
   </div>
-  <div class="card-text">Power BI&nbsp;Service&nbsp;&amp;&nbsp;Admin</div>
+  <div class="card-text">PowerBI Service & Admin</div>
 </a>
 
 <a href="cheat-sheets/" class="card-link card-orange">
