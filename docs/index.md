@@ -14,6 +14,7 @@
 
 .card-link img   { width:100%; height:auto; display:block; }
 
+/* The label styling is still here in case you want to add it back later */
 .card-label      { padding:.75rem 0 .9rem; font-weight:600;
                    font-size:.95rem; color:#343a40; }
 </style>
@@ -24,18 +25,18 @@
 
 [<!-- SQL Admin -->
 ![SQL Admin](assets/logos/sql-admin.png){: loading="lazy" }
-<span class="card-label">SQL Admin</span>](courses/sql-admin/){ .card-link }
+](courses/sql-admin/){ .card-link }
 
 [<!-- Python -->
 ![Python](assets/logos/python.png){: loading="lazy" }
-<span class="card-label">Python</span>](courses/python/){ .card-link }
+](courses/python/){ .card-link }
 
 [<!-- Power BI Admin -->
 ![Power BI Admin](assets/logos/powerbi.png){: loading="lazy" }
-<span class="card-label">Power BI Admin</span>](courses/power-bi-service/powerbi-service-cheatsheet.html){ .card-link }
+](courses/power-bi-service/powerbi-service-cheatsheet.html){ .card-link }
 
 [<!-- Cheat Sheets -->
-![Cheat Sheets](assets/logos/cheat-sheet.png){: loading="lazy" }
-<span class="card-label">Cheat Sheets</span>](cheat-sheets/){ .card-link }
+![Cheat Sheets](assets.logos/cheat-sheet.png){: loading="lazy" }
+](cheat-sheets/){ .card-link }
 
 </div>
