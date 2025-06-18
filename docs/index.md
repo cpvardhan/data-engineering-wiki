@@ -7,7 +7,7 @@
          alt="SQL Admin"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      SQL Admin
+ 
     </span>
   </a>
 
@@ -16,7 +16,7 @@
          alt="Python"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      Python
+   
     </span>
   </a>
 
@@ -25,7 +25,7 @@
          alt="Power BI Admin"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      Power BI Admin
+   
     </span>
   </a>
 
@@ -34,7 +34,7 @@
          alt="Cheat Sheets"
          style="width:120px;display:block;margin:0 auto 0.5rem;" />
     <span style="display:block;text-align:center;font-size:0.95rem;font-weight:600;">
-      Cheat Sheets
+      
     </span>
   </a>
 
