@@ -23,15 +23,17 @@ The **Power BI Service** is the secure, cloud-based platform by Microsoft that s
 
 ```mermaid
 sequenceDiagram
-    participant DS as Data Sources
-    participant PBD as Power BI Desktop
-    participant PBIS as Power BI Service
-    participant EU as End Users
+     
+    participant DS   as "Data Sources"
+    participant PBD  as "Power BI Desktop"
+    participant PBIS as "Power BI Service"
+    participant EU   as "End Users"
 
-    PBD->>PBIS: Publish Report (.PBIX)
-    PBIS->>EU: Share & Collaborate
-    EU->>PBIS: Consume via Web/Mobile
-    PBIS->>DS: Schedule Refresh (via Gateway)
+    PBD  ->> PBIS : Publish Report (.PBIX)
+    PBIS ->> EU   : Share & Collaborate
+    EU   ->> PBIS : Consume via Web/Mobile
+    PBIS ->> DS   : Schedule Refresh (via Gateway)
+
 ```
  
 </details>
