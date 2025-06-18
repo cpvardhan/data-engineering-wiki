@@ -41,7 +41,7 @@
 
 [<span class="card-badge badge-powerbi">
    <img src="assets/logos/powerbi.png" alt="" width="20" height="20" loading="lazy">
-   Power BI Admin
+   Power BI Service & Admin 
  </span>](courses/power-bi-service/powerbi-service-cheatsheet.html){ .card-link }
 
 [<span class="card-badge badge-cheat">
