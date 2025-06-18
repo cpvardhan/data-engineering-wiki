@@ -4,9 +4,8 @@
 > **Power BI** developer ➜ **Full-Stack Data Engineer** (Microsoft Fabric, Python, SQL Admin/Dev, REST APIs, and more).
 
 🌐 **Live site** → https://cpvardhan.github.io/data-engineering-wiki/  
-*(auto-deployed by GitHub Pages each time I push)*
-
-![deploy](https://github.com/cpvardhan/data-engineering-wiki/actions/workflows/deploy.yml/badge.svg)
+ 
+ 
 
 ---
 
