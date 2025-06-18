@@ -40,9 +40,11 @@ nav:
           - Overview: courses/sql-admin/sql-admin-overview.md
       - Python:
           - Overview: courses/python/python-overview.md
-      - Power BI Admin:
+      - Power BI Service & Admin:
           - Overview: courses/power-bi-service/powerbi-service-overview.md
           - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
+          - Documents:
+            - PowerBI Service Introduction: courses/power-bi-service/powerbi-service-docs.md
 
   # Cheat Sheets section for quick-reference guides
   - Cheat Sheets:
