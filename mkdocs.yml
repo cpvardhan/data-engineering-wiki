@@ -3,18 +3,23 @@ site_name: Data Engineering Wiki
 theme:
   name: material
   features:
-    - navigation.instant       # snappy page loads
-    - search.highlight         # highlight term on target page
+    - navigation.instant        # snappy page loads
+    - search.highlight          # highlight term on target page
 
-nav:                             # controls the sidebar
+# If you ever want explicit .html URLs everywhere, flip this to false
+use_directory_urls: true
+
+extra_css:
+  - webpage_style.css           # located at docs/webpage_style.css
+
+nav:                            # controls the sidebar
   - Home: index.md
 
   - Courses:
       - SQL Admin: courses/sql-admin/index.md
       - Python: courses/python/index.md
       - Power BI Admin:
-          # - Overview: courses/power-bi-service/index.md
-          - Cheat Sheet (HTML): courses/power-bi-service/powerbi-service-cheatsheet.html
+          - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.html
 
   - Cheat Sheets:
       - Overview: cheat-sheets/index.md
