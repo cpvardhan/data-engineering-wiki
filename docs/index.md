@@ -17,7 +17,7 @@
   <div class="card-text">Python</div>
 </a>
 
-<a href="courses/power-bi-service/powerbi-service-cheatsheet.html" class="card-link card-teal">
+<a href="courses/power-bi-service/powerbi-service-cheatsheet.md" class="card-link card-teal">
   <div class="card-img">
     <img src="assets/logos/powerbi.png" alt="Power BI Icon">
   </div>
