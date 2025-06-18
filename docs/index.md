@@ -31,22 +31,22 @@
 
 [<span class="card-badge badge-sql">
    <img src="assets/logos/sql-admin.png" alt="" width="20" height="20" loading="lazy">
- 
+   SQL Admin
  </span>](courses/sql-admin/){ .card-link }
 
 [<span class="card-badge badge-python">
    <img src="assets/logos/python.png" alt="" width="20" height="20" loading="lazy">
- 
+   Python
  </span>](courses/python/){ .card-link }
 
 [<span class="card-badge badge-powerbi">
    <img src="assets/logos/powerbi.png" alt="" width="20" height="20" loading="lazy">
-   
+   Power BI Admin
  </span>](courses/power-bi-service/powerbi-service-cheatsheet.html){ .card-link }
 
 [<span class="card-badge badge-cheat">
    <img src="assets/logos/cheatsheet.png" alt="" width="20" height="20" loading="lazy">
-  
+   Cheat Sheets
  </span>](cheat-sheets/){ .card-link }
 
 </div>
