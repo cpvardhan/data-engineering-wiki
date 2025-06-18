@@ -44,7 +44,7 @@ nav:
           - Overview: courses/power-bi-service/powerbi-service-overview.md
           - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
           - Documents:
-            - PowerBI Service Introduction: courses/power-bi-service/powerbi-service-docs.md
+            - Platform Foundations & Architecture:  courses/power-bi-service/documents/platform-foundations-architecture.md
 
   # Cheat Sheets section for quick-reference guides
   - Cheat Sheets:
