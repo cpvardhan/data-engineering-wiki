@@ -88,28 +88,28 @@ title: 📚 Course Library
 
   <a href="courses/sql-admin/sql-admin-overview/" class="card-link card-blue">
     <div class="card-img">
-      <img src="/assets/logos/sql-admin.png" alt="SQL Admin Icon">
+      <img src="assets/logos/sql-admin.png" alt="SQL Admin Icon">
     </div>
     <div class="card-text">SQL Admin</div>
   </a>
 
   <a href="courses/python/python-overview/" class="card-link card-yellow">
     <div class="card-img">
-      <img src="/assets/logos/python.png" alt="Python Icon">
+      <img src="assets/logos/python.png" alt="Python Icon">
     </div>
     <div class="card-text">Python</div>
   </a>
 
   <a href="courses/power-bi-service/powerbi-service-overview/" class="card-link card-teal">
     <div class="card-img">
-      <img src="/assets/logos/powerbi.png" alt="Power BI Icon">
+      <img src="assets/logos/powerbi.png" alt="Power BI Icon">
     </div>
     <div class="card-text">Power BI Service & Admin</div>
   </a>
 
   <a href="cheat-sheets/cheatsheet-overview/" class="card-link card-orange">
     <div class="card-img">
-      <img src="/assets/logos/cheatsheet.png" alt="Cheat Sheets Icon">
+      <img src="assets/logos/cheatsheet.png" alt="Cheat Sheets Icon">
     </div>
     <div class="card-text">Cheat Sheets</div>
   </a>
