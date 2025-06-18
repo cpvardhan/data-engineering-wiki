@@ -1,0 +1,30 @@
+/* docs/webpage_style.css */
+
+/* --- 1. Make the top header bar fixed --- */
+.md-header {
+    position: fixed;
+}
+
+/* --- 2. Make the left sidebar fixed and scrollable on its own --- */
+.md-sidebar--primary {
+    position: fixed;
+    /* Make the sidebar scrollable if it has many items */
+    overflow-y: auto;
+    /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- 3. Adjust the main content area to prevent it from being hidden --- */
+/* This is the most important part! */
+.md-main__inner {
+    /* Push the content down to be below the fixed header */
+    margin-top: 4.5rem; 
+    /* Add some bottom margin for spacing */
+    margin-bottom: 2rem;
+}
+
+/* Ensure the main content area scrolls, not the whole page */
+.md-content {
+    height: calc(100vh - 7rem); /* Full viewport height minus top/bottom margins */
+    overflow-y: auto; /* Make ONLY the content scroll */
+}

@@ -1,40 +1,51 @@
-site_name: Data Engineering Wiki
+# mkdocs.yml (Updated Version)
 
-theme:
-  name: material
-  features:
-    - navigation.instant        # snappy page loads
-    - search.highlight          # highlight term on target page
+site_name: Data Engineering Wiki
 
 # If you ever want explicit .html URLs everywhere, flip this to false
 use_directory_urls: true
 
+# Theme Configuration
+theme:
+  name: material
+  features:
+    # Features you already had (great choices!)
+    - navigation.instant      # For snappy, SPA-like page loads
+    - search.highlight        # Highlights search term on target page
+    
+    # --- NEW FEATURES ADDED FOR BETTER LAYOUT AND NAVIGATION ---
+    - navigation.tabs         # Creates a top-level tab bar for Home, Courses, etc.
+    - navigation.expand       # Expands left nav automatically as you browse
+    - navigation.top          # Adds a "back to top" button on long pages
+
+# This points to your existing CSS file. We will edit this file in the next step.
 extra_css:
-  - webpage_style.css           # located at docs/webpage_style.css
+  - webpage_style.css     # Must be located at docs/webpage_style.css
 
-nav:                            # controls the sidebar
+# Controls the sidebar and top tabs. Structure is preserved from your file.
+nav:
   - Home: index.md
-
   - Courses:
-      - SQL Admin: courses/sql-admin/index.md
-      - Python: courses/python/index.md
-      - Power BI Admin:
-          - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.html
-
+    - SQL Admin: courses/sql-admin/index.md
+    - Python: courses/python/index.md
+    - Power BI Admin:
+      - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
   - Cheat Sheets:
-      - Overview: cheat-sheets/index.md
-      - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.html
+    - Overview: cheat-sheets/index.md
+    - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
 
+# Your markdown extensions are perfect. No changes needed.
 markdown_extensions:
-  - attr_list                   # {: .class } support
-  - md_in_html                  # allow Markdown inside raw HTML
-  - pymdownx.superfences:       # extra code-block powers
+  - attr_list               # {: .class } support
+  - md_in_html              # allow Markdown inside raw HTML
+  - pymdownx.superfences:   # extra code-block powers
       custom_fences:
         - name: mermaid
-          class: mermaid        # ```mermaid``` diagrams
-  - pymdownx.emoji:             # Material Design icons via :material-*:
+          class: mermaid      # ```mermaid``` diagrams
+  - pymdownx.emoji:         # Material Design icons via :material-*:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+# Your plugins are perfect. No changes needed.
 plugins:
-  - search                      # built-in full-text search
+  - search                  # built-in full-text search
