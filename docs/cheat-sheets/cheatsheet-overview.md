@@ -1,3 +1,8 @@
+---
+title: Cheat-Sheets Overview
+permalink: /cheat-sheets/
+---
+
 # 📝 Cheat Sheets
 
 Quick-reference pages for busy data pros.

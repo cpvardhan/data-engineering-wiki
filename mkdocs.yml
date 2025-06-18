@@ -1,51 +1,72 @@
-# mkdocs.yml (Updated Version)
+# mkdocs.yml (Configuration for Data Engineering Wiki)
 
-site_name: Data Engineering Wiki
+# ------------------------------------------------------------
+# Site Settings
+# ------------------------------------------------------------
+site_name: Data Engineering Wiki          # The title of your site
+use_directory_urls: true                  # Serve clean URLs ("/page/" instead of "/page.html")
 
-# If you ever want explicit .html URLs everywhere, flip this to false
-use_directory_urls: true
-
+# ------------------------------------------------------------
 # Theme Configuration
+# ------------------------------------------------------------
 theme:
-  name: material
+  name: material                         # Use the Material for MkDocs theme
   features:
-    # Features you already had (great choices!)
-    - navigation.instant      # For snappy, SPA-like page loads
-    - search.highlight        # Highlights search term on target page
+    # Core navigation & search enhancements
+    - navigation.instant      # Snappy, SPA-like page loads
+    - search.highlight        # Highlights search terms on target pages
     
-    # --- NEW FEATURES ADDED FOR BETTER LAYOUT AND NAVIGATION ---
-    - navigation.tabs         # Creates a top-level tab bar for Home, Courses, etc.
-    - navigation.expand       # Expands left nav automatically as you browse
-    - navigation.top          # Adds a "back to top" button on long pages
+    # Additional nice-to-have features
+    - navigation.tabs         # Top-level tabs (Home, Courses, etc.)
+    - navigation.expand       # Automatically expand sidebar as you browse
+    - navigation.top          # Adds a "Back to top" button on long pages
 
-# This points to your existing CSS file. We will edit this file in the next step.
+# ------------------------------------------------------------
+# Custom CSS
+# ------------------------------------------------------------
+# Points to your custom stylesheet located in "docs/webpage_style.css"
 extra_css:
-  - webpage_style.css     # Must be located at docs/webpage_style.css
+  - webpage_style.css         # Contains grid and card styling for the Course Library
 
-# Controls the sidebar and top tabs. Structure is preserved from your file.
+# ------------------------------------------------------------
+# Site Navigation (Sidebar & Tabs)
+# ------------------------------------------------------------
 nav:
   - Home: index.md
-  - Courses:
-    - SQL Admin: courses/sql-admin/index.md
-    - Python: courses/python/index.md
-    - Power BI Admin:
-      - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
-  - Cheat Sheets:
-    - Overview: cheat-sheets/index.md
-    - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
 
-# Your markdown extensions are perfect. No changes needed.
+  # Courses section with Overview pages as landing pages
+  - Courses:
+      - SQL Admin:
+          - Overview: courses/sql-admin/sql-admin-overview.md
+      - Python:
+          - Overview: courses/python/python-overview.md
+      - Power BI Admin:
+          - Overview: courses/power-bi-service/powerbi-service-overview.md
+          - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
+
+  # Cheat Sheets section for quick-reference guides
+  - Cheat Sheets:
+      - Overview: cheat-sheets/cheatsheet-overview.md
+      - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
+
+# ------------------------------------------------------------
+# Markdown Extensions
+# ------------------------------------------------------------
+# These extensions enhance Markdown parsing and support for embedded HTML
 markdown_extensions:
-  - attr_list               # {: .class } support
-  - md_in_html              # allow Markdown inside raw HTML
-  - pymdownx.superfences:   # extra code-block powers
+  - attr_list               # Allow setting attributes with { .class } syntax
+  - md_in_html              # Enable Markdown inside raw HTML blocks
+  - pymdownx.superfences:   # Enhanced fenced code blocks
       custom_fences:
-        - name: mermaid
-          class: mermaid      # ```mermaid``` diagrams
-  - pymdownx.emoji:         # Material Design icons via :material-*:
+        - name: mermaid     # Support for ```mermaid``` diagram blocks
+          class: mermaid
+  - pymdownx.emoji:         # Convert :emoji: codes into SVG icons
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-# Your plugins are perfect. No changes needed.
+# ------------------------------------------------------------
+# Plugins
+# ------------------------------------------------------------
+# Built-in search plugin for full-text search functionality
 plugins:
-  - search                  # built-in full-text search
+  - search
