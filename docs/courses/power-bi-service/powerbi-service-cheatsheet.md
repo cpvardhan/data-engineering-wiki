@@ -18,8 +18,8 @@ The **Power BI Service** is the secure, cloud-based platform by Microsoft that s
 - **⏰ Refresh & Alerts:** Automated data refreshes and data-driven alerts keep insights up to date.  
 - **🌐 Anywhere Access:** Consume via web browser or mobile app on any device.
 
-<details>
-<summary><strong>🌊 Power BI Ecosystem Flow</strong></summary>
+ 
+
 
 ```mermaid
 sequenceDiagram
@@ -35,8 +35,8 @@ sequenceDiagram
     PBIS ->> DS   : Schedule Refresh (via Gateway)
 
 ```
+<div align="center"> <strong>🌊 Power BI Ecosystem Flow</strong></div>
  
-</details>
 
 ---
 
@@ -50,8 +50,6 @@ A **Workspace** is a container for organizing and collaborating on related Power
   - **Pro license:** 10 GB per workspace  
   - **Premium/Fabric:** up to 100 TB  
 
-<details>
-<summary><strong>📊 Workspace Types</strong></summary>
 
 ```mermaid
 graph LR
@@ -60,6 +58,7 @@ graph LR
     A -- Collaborative --> C(Shared/App Workspace)
     C -- Publishes --> D(Power BI Apps)
 ```
+<div align="center"> <strong>📊 Workspace Types</strong> </div>
  
 </details>
 
@@ -161,8 +160,6 @@ Assign roles to control content management:
 | **Contributor** | Create/edit content; cannot publish apps—ideal for devs                    |
 | **Viewer**    | View-only access to published content                                         |
 
-<details>
-<summary><strong>🔒 RLS Flow</strong></summary>
 
 ```mermaid
 sequenceDiagram
@@ -178,6 +175,7 @@ sequenceDiagram
     Dataset-->>Report: Return Filtered Data
     Report-->>User: Display Filtered View
 ```
+<div align="center"> <strong>🔒 RLS Flow</strong></div>
 </details>
 
 **Row-Level Security (RLS):** Defined in Desktop, managed in Service to filter rows per user.
@@ -209,8 +207,7 @@ sequenceDiagram
 - **Data Gateway:** Secure bridge to on-premises data (SQL Server, local files).  
 - **Scheduled Refresh:** Pro (8/day), Premium/Fabric (48/day).
 
-<details>
-<summary><strong>🔁 Refresh Flow</strong></summary>
+
 
 ```mermaid
 sequenceDiagram
@@ -224,7 +221,8 @@ sequenceDiagram
     GW-->>PBIS: Forward Data
     PBIS->>PBIS: Update Dataset
 ```
-</details>
+<div align="center"> <strong>🔁 Refresh Flow</strong></div>
+ 
 
 ---
 
@@ -235,8 +233,6 @@ sequenceDiagram
 - **Datamarts:** Managed Azure SQL DB for analytics between flows & warehouses.  
 - **Deployment Pipelines:** (Premium/PPU) Manage content lifecycle across dev→test→prod.
 
-<details>
-<summary><strong>🔧 Advanced Components Flow</strong></summary>
 
 ```mermaid
 sequenceDiagram
@@ -252,4 +248,5 @@ sequenceDiagram
     Datasets->>Reports: Build Reports
     Datamarts->>Reports: Build Reports
 ```
-</details>
+<div align="center"> <strong>🔧 Advanced Components Flow</strong></div>
+ 
