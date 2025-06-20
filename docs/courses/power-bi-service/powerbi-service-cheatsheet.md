@@ -60,6 +60,7 @@ graph LR
     A -- Collaborative --> C(Shared/App Workspace)
     C -- Publishes --> D(Power BI Apps)
 ```
+ 
 </details>
 
 **💡 When to Use:**  
