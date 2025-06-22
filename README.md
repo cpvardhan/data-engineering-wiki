@@ -4,24 +4,26 @@
 > **Power BI** developer → **Full-Stack Data Engineer**  
 > (Microsoft Fabric, Python, SQL Admin/Dev, REST APIs, and more).
 
-🌐 **Live site** → https://cpvardhan.github.io/data-engineering-wiki/
+🌐 **GitHub Pages** → https://cpvardhan.github.io/data-engineering-wiki/
 
 ---
 
 ## 🚀 Learning Road-map (30 weeks)
 
-Click any module to see its week-by-week plan, hands-on mini-projects, and resources:
+Browse each module’s week-by-week plan, mini-projects, and resources:
 
-| Module | Focus area |
-| ------ | ---------- |
-| [Module-1: DW & SQL Foundations](roadmap/module1.md)        | Dimensional modelling · Advanced SQL tuning |
-| [Module-2: Python ETL & CI](roadmap/module2.md)             | Polars vs pandas · pytest · DevOps pipelines |
-| [Module-3: Spark & Delta Performance](roadmap/module3.md)   | Catalyst, AQE · OPTIMIZE & Z-ORDER |
-| [Module-4: Streaming & Data Quality](roadmap/module4.md)    | Event Hubs · DLT · Great Expectations/dbt |
-| [Module-5: Azure Lakehouse](roadmap/module5.md)             | ADLS Gen2 · Databricks · Unity Catalog |
-| [Module-6: ADF & Synapse](roadmap/module6.md)               | Mapping Data Flows · DW tuning & monitoring |
-| [Module-7: Fabric Lakehouse & Real-Time](roadmap/module7.md) | OneLake · DirectLake · Real-Time KQL |
-| [Module-8: Interview & System Design](roadmap/module8.md)    | Whiteboard drills · STAR stories · Résumé tips |
+| Module                                                                         | Focus area                                      |
+|-------------------------------------------------------------------------------|-------------------------------------------------|
+| [Module-1: DW & SQL Foundations](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module1/)        | Dimensional modelling · Advanced SQL tuning      |
+| [Module-2: Python ETL & CI](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module2/)             | Polars vs pandas · pytest · DevOps pipelines     |
+| [Module-3: Spark & Delta Performance](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module3/)   | Catalyst · AQE · OPTIMIZE & Z-ORDER              |
+| [Module-4: Streaming & Data Quality](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module4/)    | Event Hubs · DLT · Great Expectations/dbt        |
+| [Module-5: Azure Lakehouse](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module5/)             | ADLS Gen2 · Databricks · Unity Catalog           |
+| [Module-6: ADF & Synapse](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module6/)               | Mapping Data Flows · DW tuning & monitoring      |
+| [Module-7: Fabric Lakehouse & Real-Time](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module7/) | OneLake · DirectLake · Real-Time KQL             |
+| [Module-8: Interview & System Design](https://cpvardhan.github.io/data-engineering-wiki/roadmap/module8/)    | Whiteboard drills · STAR stories · Résumé tips   |
+
+> **Note:** The `roadmap/moduleX/` pages live under `docs/roadmap/` in the source; MkDocs publishes them as clean URLs thanks to `use_directory_urls: true`.
 
 ---
 
@@ -38,7 +40,7 @@ Click any module to see its week-by-week plan, hands-on mini-projects, and resou
 | **Core Data Engineering**     | Batch vs. streaming, orchestration, governance, cost optimisation          |
 | **… and more coming**         | Snowflake • dbt • Delta Lake • Kafka • cloud certs                         |
 
-> 💡 Diagrams via **Mermaid**; code blocks have one-click copy; full-text search thanks to **Material for MkDocs**.
+> 💡 Diagrams via **Mermaid**; code blocks one-click copy; full-text search powered by **Material for MkDocs**.
 
 ---
 
@@ -46,4 +48,4 @@ Click any module to see its week-by-week plan, hands-on mini-projects, and resou
 
 ```bash
 pip install mkdocs-material mkdocs-mermaid2-plugin
-mkdocs serve         # then open http://127.0.0.1:8000
+mkdocs serve         # open http://127.0.0.1:8000
