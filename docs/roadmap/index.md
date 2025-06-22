@@ -158,7 +158,15 @@
         <span class="module-title">Module-8 Interview &amp; System Design</span>
       </div>
     </a>
-
+    <a href="weeklyplan/" class="module-card grad-orange">
+      <div class="module-img">
+        <img src="../assets/timeline/timemanagement.jpeg" alt="Module-8">
+      </div>
+      <div class="module-body">
+        <span class="module-title">Plan for the Week</span>
+      </div>
+    </a>
+ 
   </div>
 
 </body>
