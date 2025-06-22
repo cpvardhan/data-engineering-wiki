@@ -29,7 +29,16 @@ extra_css:
 # ------------------------------------------------------------
 nav:
   - Home: index.md
-
+  - Road Map:
+      - Overview: roadmap/index.md
+      - Module 1 – DW & SQL Foundations: roadmap/module1.md
+      - Module 2 – Python ETL & CI: roadmap/module2.md
+      - Module 3 – Spark & Delta Performance: roadmap/module3.md
+      - Module 4 – Streaming & Data Quality: roadmap/module4.md
+      - Module 5 – Azure Lakehouse: roadmap/module5.md
+      - Module 6 – ADF & Synapse: roadmap/module6.md
+      - Module 7 – Fabric Lakehouse & Real-Time: roadmap/module7.md
+      - Module 8 – Interview & System Design: roadmap/module8.md 
   - Courses:
       - SQL Admin:
           - Overview: courses/sql-admin/sql-admin-overview.md
@@ -45,16 +54,7 @@ nav:
       - Overview: cheat-sheets/cheatsheet-overview.md
       - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
 
-  - Road Map:
-      - Overview: roadmap/index.md
-      - Module 1 – DW & SQL Foundations: roadmap/module1.md
-      - Module 2 – Python ETL & CI: roadmap/module2.md
-      - Module 3 – Spark & Delta Performance: roadmap/module3.md
-      - Module 4 – Streaming & Data Quality: roadmap/module4.md
-      - Module 5 – Azure Lakehouse: roadmap/module5.md
-      - Module 6 – ADF & Synapse: roadmap/module6.md
-      - Module 7 – Fabric Lakehouse & Real-Time: roadmap/module7.md
-      - Module 8 – Interview & System Design: roadmap/module8.md 
+
 
 # ------------------------------------------------------------
 # Markdown Extensions
