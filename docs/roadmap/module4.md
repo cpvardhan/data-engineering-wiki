@@ -75,7 +75,7 @@
             <li><strong>Week 16</strong> – Data quality: GE suites; dbt tests & lineage.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑 Key Concepts</h2>
         <h3>Ingestion Systems</h3>
         <ul>
             <li>Event Hubs vs Kafka: partitions, consumer groups.</li>

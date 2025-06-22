@@ -75,7 +75,7 @@
             <li><strong>Week 12</strong> – Delta Lake deep dive: MERGE, Z-ordering, compaction, time travel.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
 
         <h3>1. Spark APIs</h3>
         <ul>

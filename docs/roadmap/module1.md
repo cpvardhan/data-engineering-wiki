@@ -75,7 +75,7 @@
             <li><strong>Week 4</strong> – OLAP vs relational, materialized views, ETL mapping.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
 
         <h3>1. Schema Patterns</h3>
         <ul>

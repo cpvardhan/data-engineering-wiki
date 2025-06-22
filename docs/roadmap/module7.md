@@ -75,7 +75,7 @@
             <li><strong>Week 28</strong> – Governance: roles, promotion pipelines, lineage.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
         <h3>Fabric Architecture</h3>
         <ul>
             <li>OneLake: single logical lake across workloads; Shortcuts.</li>

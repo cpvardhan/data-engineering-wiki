@@ -75,7 +75,7 @@
             <li><strong>Week 8</strong> – CI basics: GitHub Actions for tests & linting; packaging with Poetry.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
 
         <h3>1. Data Libraries</h3>
         <ul>

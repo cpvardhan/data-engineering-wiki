@@ -75,7 +75,7 @@
             <li><strong>Week 24</strong> – CI/CD: ARM templates, Git integration, releases.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
         <h3>ADF Core Concepts</h3>
         <ul>
             <li>Linked services, datasets, pipelines, triggers.</li>

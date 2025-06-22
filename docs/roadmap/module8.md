@@ -73,7 +73,7 @@
             <li><strong>Week 30</strong> – Mock interviews: STAR, technical Q&amp;A & design drills.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
         <h3>Résumé & Portfolio</h3>
         <ul>
             <li>Structure: summary, skills, experience, projects.</li>

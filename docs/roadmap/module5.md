@@ -75,7 +75,7 @@
             <li><strong>Week 20</strong> – Lakehouse best practices & folder layout.</li>
         </ul>
 
-        <h2>🔑 Subtopics & Key Concepts</h2>
+        <h2>🔑Key Concepts</h2>
         <h3>ADLS Gen2 Features</h3>
         <ul>
             <li>Hierarchical namespace, storage tiers, lifecycle policies.</li>
