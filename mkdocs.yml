@@ -12,11 +12,8 @@ use_directory_urls: true                  # Serve clean URLs ("/page/" instead o
 theme:
   name: material                         # Use the Material for MkDocs theme
   features:
-    # Core navigation & search enhancements
     - navigation.instant      # Snappy, SPA-like page loads
     - search.highlight        # Highlights search terms on target pages
-    
-    # Additional nice-to-have features
     - navigation.tabs         # Top-level tabs (Home, Courses, etc.)
     - navigation.expand       # Automatically expand sidebar as you browse
     - navigation.top          # Adds a "Back to top" button on long pages
@@ -24,7 +21,6 @@ theme:
 # ------------------------------------------------------------
 # Custom CSS
 # ------------------------------------------------------------
-# Points to your custom stylesheet located in "docs/webpage_style.css"
 extra_css:
   - webpage_style.css         # Contains grid and card styling for the Course Library
 
@@ -34,7 +30,6 @@ extra_css:
 nav:
   - Home: index.md
 
-  # Courses section with Overview pages as landing pages
   - Courses:
       - SQL Admin:
           - Overview: courses/sql-admin/sql-admin-overview.md
@@ -44,17 +39,26 @@ nav:
           - Overview: courses/power-bi-service/powerbi-service-overview.md
           - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
           - Documents:
-            - Platform Foundations & Architecture:  courses/power-bi-service/documents/platform-foundations-architecture.md
+              - Platform Foundations & Architecture: courses/power-bi-service/documents/platform-foundations-architecture.md
 
-  # Cheat Sheets section for quick-reference guides
   - Cheat Sheets:
       - Overview: cheat-sheets/cheatsheet-overview.md
       - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
 
+  - Road Map:
+      - Overview: roadmap/index.md
+      - Module 1 – DW & SQL Foundations: roadmap/module1.md
+      - Module 2 – Python ETL & CI: roadmap/module2.md
+      - Module 3 – Spark & Delta Performance: roadmap/module3.md
+      - Module 4 – Streaming & Data Quality: roadmap/module4.md
+      - Module 5 – Azure Lakehouse: roadmap/module5.md
+      - Module 6 – ADF & Synapse: roadmap/module6.md
+      - Module 7 – Fabric Lakehouse & Real-Time: roadmap/module7.md
+      - Module 8 – Interview & System Design: roadmap/module8.md 
+
 # ------------------------------------------------------------
 # Markdown Extensions
 # ------------------------------------------------------------
-# These extensions enhance Markdown parsing and support for embedded HTML
 markdown_extensions:
   - attr_list               # Allow setting attributes with { .class } syntax
   - md_in_html              # Enable Markdown inside raw HTML blocks
@@ -69,6 +73,5 @@ markdown_extensions:
 # ------------------------------------------------------------
 # Plugins
 # ------------------------------------------------------------
-# Built-in search plugin for full-text search functionality
 plugins:
   - search

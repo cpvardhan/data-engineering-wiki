@@ -1,0 +1,1 @@
+markdown\n# 🎯 Phase 1 – DW & SQL Foundations\n\n*Coming soon – detailed weekly plan, resources, and mini-project instructions.*\n
