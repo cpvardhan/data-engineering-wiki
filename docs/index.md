@@ -135,7 +135,7 @@
   <div class="module-grid">
     <a href="roadmap/module1/" class="module-card grad-blue">
       <div class="module-img">
-        <img src="/assets/timeline/phase1_dw_sql_foundations.png" alt="Module-1">
+        <img src="assets/timeline/phase1_dw_sql_foundations.png" alt="Module-1">
       </div>
       <div class="module-body">
         <span class="module-title">Module-1 DW & SQL Foundations</span>
@@ -144,7 +144,7 @@
 
     <a href="roadmap/module2/" class="module-card grad-yellow">
       <div class="module-img">
-        <img src="/assets/timeline/phase2_python_etl_ci_cd.png" alt="Module-2">
+        <img src="assets/timeline/phase2_python_etl_ci_cd.png" alt="Module-2">
       </div>
       <div class="module-body">
         <span class="module-title">Module-2 Python ETL & CI</span>
@@ -153,7 +153,7 @@
 
     <a href="roadmap/module3/" class="module-card grad-teal">
       <div class="module-img">
-        <img src="/assets/timeline/phase3_spark_delta_performance.png" alt="Module-3">
+        <img src="assets/timeline/phase3_spark_delta_performance.png" alt="Module-3">
       </div>
       <div class="module-body">
         <span class="module-title">Module-3 Spark & Delta Performance</span>
@@ -162,7 +162,7 @@
 
     <a href="roadmap/module4/" class="module-card grad-orange">
       <div class="module-img">
-        <img src="/assets/timeline/phase4_streaming_data_quality.png" alt="Module-4">
+        <img src="assets/timeline/phase4_streaming_data_quality.png" alt="Module-4">
       </div>
       <div class="module-body">
         <span class="module-title">Module-4 Streaming & Data Quality</span>
@@ -171,7 +171,7 @@
 
     <a href="roadmap/module5/" class="module-card grad-blue">
       <div class="module-img">
-        <img src="/assets/timeline/phase5_azure_lakehouse.png" alt="Module-5">
+        <img src="assets/timeline/phase5_azure_lakehouse.png" alt="Module-5">
       </div>
       <div class="module-body">
         <span class="module-title">Module-5 Azure Lakehouse</span>
@@ -180,7 +180,7 @@
 
     <a href="roadmap/module6/" class="module-card grad-yellow">
       <div class="module-img">
-        <img src="/assets/timeline/phase6_adf_synapse_orchestration.png" alt="Module-6">
+        <img src="assets/timeline/phase6_adf_synapse_orchestration.png" alt="Module-6">
       </div>
       <div class="module-body">
         <span class="module-title">Module-6 ADF & Synapse</span>
@@ -189,7 +189,7 @@
 
     <a href="roadmap/module7/" class="module-card grad-teal">
       <div class="module-img">
-        <img src="/assets/timeline/phase7_fabric_lakehouse_realtime.png" alt="Module-7">
+        <img src="assets/timeline/phase7_fabric_lakehouse_realtime.png" alt="Module-7">
       </div>
       <div class="module-body">
         <span class="module-title">Module-7 Fabric Lakehouse & Real-Time</span>
@@ -198,7 +198,7 @@
 
     <a href="roadmap/module8/" class="module-card grad-orange">
       <div class="module-img">
-        <img src="/assets/timeline/phase8_interview_system_design.png" alt="Module-8">
+        <img src="assets/timeline/phase8_interview_system_design.png" alt="Module-8">
       </div>
       <div class="module-body">
         <span class="module-title">Module-8 Interview & System Design</span>
