@@ -19,7 +19,7 @@
     .module-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.75rem;
+      gap: 1.5rem;
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
@@ -28,9 +28,28 @@
       .module-grid { grid-template-columns: 1fr; }
     }
 
+    /* Course Library: 3 per row, smaller cards and text */
+    .course-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 1rem !important;
+    }
+    .course-grid .module-card {
+      height: 100px;
+    }
+    .course-grid .module-img {
+      flex: 0 0 35%;
+    }
+    .course-grid .module-body {
+      padding: 0 .5rem;
+    }
+    .course-grid .module-title {
+      font-size: 0.8rem;
+    }
+
+    /* Road-map cards slightly smaller */
     .module-card {
       display: flex;
-      height: 160px;
+      height: 140px;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
@@ -62,7 +81,7 @@
       padding: 0 .75rem;
     }
     .module-title {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       line-height: 1.2;
     }
@@ -91,7 +110,7 @@
 
   <!-- ───────────────────────── Course Library ───────────────────────── -->
   <h2>🗂️ Course Library</h2>
-  <div class="module-grid">
+  <div class="module-grid course-grid">
 
     <a href="courses/sql-admin/sql-admin-overview/" class="module-card grad-blue">
       <div class="module-img">
