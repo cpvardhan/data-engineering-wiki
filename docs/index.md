@@ -92,6 +92,7 @@
   <!-- ───────────────────────── Course Library ───────────────────────── -->
   <h2>🗂️ Course Library</h2>
   <div class="module-grid">
+
     <a href="courses/sql-admin/sql-admin-overview/" class="module-card grad-blue">
       <div class="module-img">
         <img src="assets/logos/sql-admin.png" alt="SQL Admin">
@@ -112,7 +113,7 @@
 
     <a href="courses/power-bi-service/powerbi-service-overview/" class="module-card grad-teal">
       <div class="module-img">
-        <img src="assets/logos/powerbi.png" alt="Power BI">
+        <img src="assets/logos/powerbi.png" alt="Power BI Service & Admin">
       </div>
       <div class="module-body">
         <span class="module-title">Power BI Service & Admin</span>
@@ -127,12 +128,14 @@
         <span class="module-title">Cheat Sheets</span>
       </div>
     </a>
+
   </div>
 
   <!-- ───────────────────────── Road-map Grid ───────────────────────── -->
   <h2>🗺️ Learning Road-map (30 weeks)</h2>
   <p style="text-align:center;">Click any module card for detailed tasks & resources.</p>
   <div class="module-grid">
+
     <a href="roadmap/module1/" class="module-card grad-blue">
       <div class="module-img">
         <img src="assets/timeline/phase1_dw_sql_foundations.png" alt="Module-1">
@@ -204,6 +207,7 @@
         <span class="module-title">Module-8 Interview & System Design</span>
       </div>
     </a>
+
   </div>
 
 </body>
