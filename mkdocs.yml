@@ -50,6 +50,9 @@ nav:
   - '📚 Courses': # Added emoji
       - '💡 Fundamentals of Data Engineering': # Added emoji
           - 'Overview': courses/fundamentals/overview.md
+          - 'Introduction to Data Engineering': courses/fundamentals/data_engineering_fundamentals.md
+          - 'Data Engineering Workflow & Core Concepts': courses/fundamentals/data_engineering_workflow_core_concepts.md
+          - 'Data Storage and Processing Systems': courses/fundamentals/data_storage_processing_systems.md
       - '🐍 Python': # Added emoji
           - 'Overview': courses/python/python-overview.md
       - '📊 Power BI Service & Admin': # Added emoji
