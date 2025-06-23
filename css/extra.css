@@ -1,0 +1,95 @@
+/* docs/css/extra.css */
+
+/* Define a primary accent color variable for easy changes later */
+:root {
+    --accent-color: #00bcd4; /* A vibrant cyan/turquoise */
+    --accent-dark: #0097a7;  /* A slightly darker shade for hover/active */
+    --header-bg: #1a2a3a;    /* Deep, rich navy for the top bar */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --sidebar-bg: #f0f8ff;   /* Very light, airy blue for sidebar */
+    --sidebar-item-hover: #e0f2f7; /* Lighter cyan for sidebar item hover */
+    --sidebar-item-active: #c5e6ec; /* Active sidebar item background */
+}
+
+/* --- Top Bar Styling (Header) --- */
+.md-header {
+    background-color: var(--header-bg); /* Deep navy */
+    color: var(--text-light);           /* White text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+.md-header__button.md-logo img {
+    filter: brightness(0) invert(1); /* Makes logos white */
+}
+
+/* --- Sub-Header (Navigation Tabs) Styling --- */
+.md-tabs {
+    background-color: #263c52; /* A slightly lighter, but still dark, blue-gray for tabs */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Good shadow */
+}
+
+.md-tabs__link {
+    color: rgba(255, 255, 255, 0.75); /* Slightly transparent white for unselected tabs */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.md-tabs__link:hover {
+    color: var(--text-light); /* Solid white on hover */
+    background-color: rgba(255, 255, 255, 0.15); /* More visible background tint on hover */
+}
+
+.md-tabs__link--active {
+    color: var(--text-light); /* Solid white for the active tab */
+    font-weight: bold;
+    border-bottom: 3px solid var(--accent-color); /* Vibrant accent color underline */
+}
+
+/* --- Side Pane Styling (Navigation Sidebar) --- */
+.md-sidebar--primary {
+    background-color: var(--sidebar-bg); /* Very light blue */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1); /* Slightly more visible shadow */
+}
+
+.md-nav__item {
+    padding: 5px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.md-nav__link {
+    font-weight: 500;
+    font-size: 0.95em;
+    padding-left: 1.2em;
+    color: var(--text-dark); /* Dark gray text for readability */
+}
+
+.md-nav__item:hover > .md-nav__link {
+    background-color: var(--sidebar-item-hover); /* Lighter cyan on hover */
+    color: var(--accent-dark); /* Darker accent color text on hover */
+    text-decoration: none;
+}
+
+.md-nav__item--active > .md-nav__link {
+    background-color: var(--sidebar-item-active); /* Light cyan for active item background */
+    color: var(--accent-dark); /* Darker accent color for active item text */
+    font-weight: bold;
+    border-left: 4px solid var(--accent-color); /* Vibrant accent border */
+    padding-left: calc(1.2em - 4px);
+}
+
+/* --- Main Content Area Styling --- */
+.md-main__inner {
+    background-color: #ffffff; /* Pure white background for content */
+    padding: 25px 30px; /* Increased padding for better spacing */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08); /* More noticeable shadow around content */
+}
+
+.md-content {
+    background-color: #ffffff; /* Pure white */
+}
+
+body {
+    background-color: #f7f9fc; /* A very light, subtle background for the page outside content */
+}
