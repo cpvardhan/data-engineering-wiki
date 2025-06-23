@@ -50,9 +50,13 @@ nav:
   - '📚 Courses': # Added emoji
       - '💡 Fundamentals of Data Engineering': # Added emoji
           - 'Overview': courses/fundamentals/overview.md
-          - 'Introduction to Data Engineering': courses/fundamentals/data_engineering_fundamentals.md
-          - 'Data Engineering Workflow & Core Concepts': courses/fundamentals/data_engineering_workflow_core_concepts.md
-          - 'Data Storage and Processing Systems': courses/fundamentals/data_storage_processing_systems.md
+          - 'Introduction to Data Engineering': courses/fundamentals/chapter_1_Introduction_to_Data_Engineering.md
+          - 'Data Engineering Workflow & Core Concepts': courses/fundamentals/chapter_2_Data_Engineering_Workflow_and_Core_Concepts.md
+          - 'Data Storage and Processing Systems': courses/fundamentals/chapter_3_Data_Storage_and_Processing_Systems.md
+          - 'Data Warehousing: A Deep Dive' : courses/fundamentals/chapter_4_Data_Warehousing.md
+          - 'Modern Data Concepts' : courses/fundamentals/chapter_5_modern_data_concepts.md
+          - 'Big Data & Distributed Computing' : courses/fundamentals/chapter_6_big_data_distributed_computing.md
+          - 'Cloud Data Engineering' : courses/fundamentals/chapter_7_cloud_data_engineering.md
       - '🐍 Python': # Added emoji
           - 'Overview': courses/python/python-overview.md
       - '📊 Power BI Service & Admin': # Added emoji
