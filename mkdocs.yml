@@ -3,25 +3,26 @@
 # ------------------------------------------------------------
 # Site Settings
 # ------------------------------------------------------------
-site_name: Data Engineering Wiki          # The title of your site
-use_directory_urls: true                  # Serve clean URLs ("/page/" instead of "/page.html")
+site_name: Data Engineering Wiki             # The title of your site
+use_directory_urls: true                     # Serve clean URLs ("/page/" instead of "/page.html")
 
 # ------------------------------------------------------------
 # Theme Configuration
 # ------------------------------------------------------------
 theme:
-  name: material                         # Use the Material for MkDocs theme
+  name: material                             # Use the Material for MkDocs theme
   features:
-    - navigation.instant      # Snappy, SPA-like page loads
-    - search.highlight        # Highlights search terms on target pages
-    - navigation.tabs         # Top-level tabs (Home, Road Map, Courses, etc.)
-    - navigation.top          # Adds a "Back to top" button on long pages
+    - navigation.instant        # Snappy, SPA-like page loads
+    - search.highlight          # Highlights search terms on target pages
+    - navigation.tabs           # Top-level tabs (Home, Road Map, Courses, etc.)
+    - navigation.top            # Adds a "Back to top" button on long pages
 
 # ------------------------------------------------------------
 # Custom CSS & JavaScript
 # ------------------------------------------------------------
 extra_css:
   - webpage_style.css         # Contains grid and card styling for the Course Library
+  - css/extra.css             # Your custom styles for top bar, side pane, and main content
 
 extra_javascript:
   # 1) Mermaid runtime (for <div class="mermaid"> blocks)
@@ -33,35 +34,35 @@ extra_javascript:
 # Site Navigation (Sidebar & Tabs)
 # ------------------------------------------------------------
 nav:
-  - Home: index.md
+  - '🏠 Home': 'index.md' # Added emoji
 
-  - Road Map:
-      - Overview: roadmap/index.md
-      - Module 1 – DW & SQL Foundations: roadmap/module1.md
-      - Module 2 – Python ETL & CI: roadmap/module2.md
-      - Module 3 – Spark & Delta Performance: roadmap/module3.md
-      - Module 4 – Streaming & Data Quality: roadmap/module4.md
-      - Module 5 – Azure Lakehouse: roadmap/module5.md
-      - Module 6 – ADF & Synapse: roadmap/module6.md
-      - Module 7 – Fabric Lakehouse & Real-Time: roadmap/module7.md
-      - Module 8 – Interview & System Design: roadmap/module8.md
+  - '🗺️ Road Map': # Added emoji
+      - 'Overview': roadmap/index.md
+      - '🚀 Module 1 – DW & SQL Foundations': roadmap/module1.md # Added emoji
+      - '🐍 Module 2 – Python ETL & CI': roadmap/module2.md       # Added emoji
+      - '⚡ Module 3 – Spark & Delta Performance': roadmap/module3.md # Added emoji
+      - '🌊 Module 4 – Streaming & Data Quality': roadmap/module4.md # Added emoji
+      - '☁️ Module 5 – Azure Lakehouse': roadmap/module5.md       # Added emoji
+      - '⚙️ Module 6 – ADF & Synapse': roadmap/module6.md        # Added emoji
+      - '📊 Module 7 – Fabric Lakehouse & Real-Time': roadmap/module7.md # Added emoji
+      - '🤝 Module 8 – Interview & System Design': roadmap/module8.md # Added emoji
 
-  - Courses:
-      - Fundamentals of Data Engineering:
-          - Overview: courses/fundamentals/overview.md
-      - Python:
-          - Overview: courses/python/python-overview.md
-      - Power BI Service & Admin:
-          - Overview: courses/power-bi-service/powerbi-service-overview.md
-          - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
-          - Documents:
-              - Platform Foundations & Architecture: courses/power-bi-service/documents/platform-foundations-architecture.md
-      - SQL Admin:
-          - Overview: courses/sql-admin/sql-admin-overview.md
+  - '📚 Courses': # Added emoji
+      - '💡 Fundamentals of Data Engineering': # Added emoji
+          - 'Overview': courses/fundamentals/overview.md
+      - '🐍 Python': # Added emoji
+          - 'Overview': courses/python/python-overview.md
+      - '📊 Power BI Service & Admin': # Added emoji
+          - 'Overview': courses/power-bi-service/powerbi-service-overview.md
+          - 'Cheat Sheet': courses/power-bi-service/powerbi-service-cheatsheet.md
+          - 'Documents':
+              - 'Platform Foundations & Architecture': courses/power-bi-service/documents/platform-foundations-architecture.md
+      - '💻 SQL Admin': # Added emoji
+          - 'Overview': courses/sql-admin/sql-admin-overview.md
 
-  - Cheat Sheets:
-      - Overview: cheat-sheets/cheatsheet-overview.md
-      - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
+  - '📝 Cheat Sheets': # Added emoji
+      - 'Overview': cheat-sheets/cheatsheet-overview.md
+      - 'Power BI Service Admin': cheat-sheets/powerbi-service-cheatsheet.md
 
 # ------------------------------------------------------------
 # Markdown Extensions
