@@ -36,7 +36,6 @@ Browse each module’s week-by-week plan, mini-projects, and resources:
 | **Python for Data Engineering** | ETL scripting, Spark, PyArrow, notebooks, testing patterns, interview sets |
 | **Microsoft Fabric**          | OneLake lakehouse notes, ingestion pipelines, Spark notebooks, monitoring  |
 | **Power BI (Developer & Admin)** | DAX tips, dataflows, Fabric integration, governance, deployment pipelines  |
-| **REST API Development**      | FastAPI/Flask guides, auth, testing, docs, performance tips                |
 | **Core Data Engineering**     | Batch vs. streaming, orchestration, governance, cost optimisation          |
 | **… and more coming**         | Snowflake • dbt • Delta Lake • Kafka • cloud certs                         |
 

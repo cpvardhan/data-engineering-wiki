@@ -14,21 +14,27 @@ theme:
   features:
     - navigation.instant      # Snappy, SPA-like page loads
     - search.highlight        # Highlights search terms on target pages
-    - navigation.tabs         # Top-level tabs (Home, Courses, etc.)
-    - navigation.expand       # Automatically expand sidebar as you browse
+    - navigation.tabs         # Top-level tabs (Home, Road Map, Courses, etc.)
     - navigation.top          # Adds a "Back to top" button on long pages
 
 # ------------------------------------------------------------
-# Custom CSS
+# Custom CSS & JavaScript
 # ------------------------------------------------------------
 extra_css:
   - webpage_style.css         # Contains grid and card styling for the Course Library
+
+extra_javascript:
+  # 1) Mermaid runtime (for <div class="mermaid"> blocks)
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  # 2) Your initializer to auto-render Mermaid on load
+  - js/mermaid-init.js
 
 # ------------------------------------------------------------
 # Site Navigation (Sidebar & Tabs)
 # ------------------------------------------------------------
 nav:
   - Home: index.md
+
   - Road Map:
       - Overview: roadmap/index.md
       - Module 1 – DW & SQL Foundations: roadmap/module1.md
@@ -38,10 +44,11 @@ nav:
       - Module 5 – Azure Lakehouse: roadmap/module5.md
       - Module 6 – ADF & Synapse: roadmap/module6.md
       - Module 7 – Fabric Lakehouse & Real-Time: roadmap/module7.md
-      - Module 8 – Interview & System Design: roadmap/module8.md 
+      - Module 8 – Interview & System Design: roadmap/module8.md
+
   - Courses:
-      - SQL Admin:
-          - Overview: courses/sql-admin/sql-admin-overview.md
+      - Fundamentals of Data Engineering:
+          - Overview: courses/fundamentals/overview.md
       - Python:
           - Overview: courses/python/python-overview.md
       - Power BI Service & Admin:
@@ -49,12 +56,12 @@ nav:
           - Cheat Sheet: courses/power-bi-service/powerbi-service-cheatsheet.md
           - Documents:
               - Platform Foundations & Architecture: courses/power-bi-service/documents/platform-foundations-architecture.md
+      - SQL Admin:
+          - Overview: courses/sql-admin/sql-admin-overview.md
 
   - Cheat Sheets:
       - Overview: cheat-sheets/cheatsheet-overview.md
       - Power BI Service Admin: cheat-sheets/powerbi-service-cheatsheet.md
-
-
 
 # ------------------------------------------------------------
 # Markdown Extensions

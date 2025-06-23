@@ -12,6 +12,7 @@
       margin: 0;
       line-height: 1.5;
       padding-bottom: 4rem;
+      background: #f9f9f9;
     }
     h1, h2 { margin: 2rem 0 1rem; text-align: center; }
 
@@ -28,10 +29,15 @@
       .module-grid { grid-template-columns: 1fr; }
     }
 
-    /* Course Library: 3 per row, smaller cards and text */
+    /* Course Library: 3 per row, center-align, smaller cards & text */
     .course-grid {
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 1rem !important;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      justify-items: center;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
     .course-grid .module-card {
       height: 100px;
@@ -43,7 +49,7 @@
       padding: 0 .5rem;
     }
     .course-grid .module-title {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
 
     /* Road-map cards slightly smaller */
@@ -97,7 +103,7 @@
 
   <!-- ───────────────────────── About Me ───────────────────────── -->
   <h1>👋 About Me</h1>
-  <div style="max-width:720px;margin:0 auto;padding:0 1rem;">
+  <div style="max-width:720px; margin:0 auto; padding:0 1rem;">
     <p>
       Welcome to my data-engineering wiki! I'm a Power BI Developer with 3 years of experience,
       now diving deep into Azure data engineering and Microsoft Fabric.
@@ -110,14 +116,14 @@
 
   <!-- ───────────────────────── Course Library ───────────────────────── -->
   <h2>🗂️ Course Library</h2>
-  <div class="module-grid course-grid">
+  <div class="course-grid">
 
-    <a href="courses/sql-admin/sql-admin-overview/" class="module-card grad-blue">
+    <a href="courses/fundamentals/overview/" class="module-card grad-blue">
       <div class="module-img">
-        <img src="assets/logos/sql-admin.png" alt="SQL Admin">
+        <img src="assets/logos/fundamentals_of_de.png" alt="Fundamentals of Data Engineering">
       </div>
       <div class="module-body">
-        <span class="module-title">SQL Admin</span>
+        <span class="module-title">Fundamentals of Data Engineering</span>
       </div>
     </a>
 
@@ -147,6 +153,18 @@
         <span class="module-title">Cheat Sheets</span>
       </div>
     </a>
+
+    <a href="courses/sql-admin/sql-admin-overview/" class="module-card grad-blue">
+      <div class="module-img">
+        <img src="assets/logos/sql-admin.png" alt="SQL Admin">
+      </div>
+      <div class="module-body">
+        <span class="module-title">SQL Admin</span>
+      </div>
+    </a>
+
+    <!-- placeholder to fill the 6th column -->
+    <div class="module-card" style="visibility:hidden;"></div>
 
   </div>
 
@@ -226,7 +244,7 @@
         <span class="module-title">Module-8 Interview & System Design</span>
       </div>
     </a>
-   
+
   </div>
 
 </body>

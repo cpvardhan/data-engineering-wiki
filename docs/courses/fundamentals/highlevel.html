@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fundamentals of Data Engineering - Granular Mindmaps</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 50px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #4a6781;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .mermaid {
+            width: 100%;
+            max-width: 900px; /* Slightly reduced max-width for better focus */
+            margin: 20px auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            display: flex; /* For centering the SVG within the div */
+            justify-content: center; /* For centering the SVG within the div */
+            align-items: center; /* For centering the SVG within the div */
+        }
+        /* General node styling */
+        .node rect, .node circle, .node polygon {
+            fill: #ecf0f1; /* Light grey */
+            stroke: #3498db; /* Blue border */
+            stroke-width: 2px;
+        }
+        .node text {
+            font-size: 13px;
+            fill: #2c3e50; /* Dark text */
+            font-weight: 600;
+        }
+        /* Specific styling for main topic nodes */
+        .main-topic rect {
+            fill: #3498db; /* Blue fill */
+            stroke: #2980b9;
+        }
+        .main-topic text {
+            fill: #ffffff; /* White text */
+            font-weight: bold;
+        }
+        /* Specific styling for sub-topic nodes */
+        .sub-topic rect {
+            fill: #a2d2ff; /* Lighter blue */
+            stroke: #3498db;
+        }
+        /* Edge styling */
+        .edgePath .path {
+            stroke: #7f8c8d; /* Grey line */
+            stroke-width: 1.5px;
+            fill: none;
+        }
+        .edgeLabel {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            font-size: 11px;
+            fill: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fundamentals of Data Engineering: Granular Mindmaps</h1>
+
+    <h2>Master Overview</h2>
+    <div class="mermaid">
+        graph LR
+            A[("I. Intro to Data Engineering")]:::main-topic
+            B[("II. Workflow & Core Concepts")]:::main-topic
+            C[("III. Storage & Processing Systems")]:::main-topic
+            D[("IV. Data Warehousing (Deep Dive)")]:::main-topic
+            E[("V. Modern Data Concepts")]:::main-topic
+            F[("VI. Big Data & Distributed Computing")]:::main-topic
+            G[("VII. Cloud Data Engineering")]:::main-topic
+            H[("VIII. Undercurrents & Supporting Concepts")]:::main-topic
+
+            A --> B
+            B --> C
+            C --> D
+            D --> E
+            E --> F
+            F --> G
+            G --> H
+    </div>
+
+    <hr/> <h2>I. Introduction to Data Engineering</h2>
+    <div class="mermaid">
+        graph TD
+            ME["I. Introduction to Data Engineering"]:::main-topic
+
+            ME --> A["A. What is Data Engineering?"]:::sub-topic
+            A --> A1("Raw to Usable Data Models")
+            A --> A2("Data Chefs")
+
+            ME --> B["B. Why Data Engineers Needed"]:::sub-topic
+            B --> B1("Massive Data Rise")
+            B1 --> B1_1("Increased Demand")
+            B --> B2("Data-Driven Decisions")
+            B2 --> B2_1("Handle & Serve Data")
+            B2 --> B2_2("Improve Business, Insights")
+    </div>
+
+    <hr/>
+
+    <h2>II. Data Engineering Workflow & Core Concepts</h2>
+
+    <h3>II.A. Three Main Pillars (Workflow Lifecycle)</h3>
+    <div class="mermaid">
+        graph LR
+            Pillars["II.A. Three Main Pillars"]:::main-topic
+
+            Pillars --> P1("1. Data Production"):::sub-topic
+            P1 --> P1a("Data Generation")
+            P1a --> P1a1("Mobile, Search, Purchases, Streaming")
+            P1 --> P1b("Data Sources")
+            P1b --> P1b1("APIs, RDBMS, Sensors, Logs, Third-Party")
+            P1 --> P1c("Raw Data is 'Garbage'")
+
+            Pillars --> P2("2. Data Transformation"):::sub-topic
+            P2 --> P2a("Core DE Role (70-80% Time)")
+            P2 --> P2b("Design Data, Apply Business Logic")
+            P2 --> P2c("Convert to Clean, Structured (Curated)")
+            P2 --> P2d("Examples: Handle Dates, Duplicates, Aggregate, Merge, Filter")
+            P2 --> P2e("Enhances Decision-Making")
+
+            Pillars --> P3("3. Data Serving"):::sub-topic
+            P3 --> P3a("Deliver to Stakeholders")
+            P3a --> P3a1("Small, Customized Data Models")
+            P3 --> P3b("Downstream Users")
+            P3b --> P3b1("Analysts, Scientists, ML Eng, Business Leaders")
+            P3 --> P3c("Uses")
+            P3c --> P3c1("Dashboards, Reports, ML Models")
+    </div>
+
+    <h3>II.B. Key Roles in the Data Ecosystem</h3>
+    <div class="mermaid">
+        graph TD
+            Roles["II.B. Key Roles in Data Ecosystem"]:::main-topic
+
+            Roles --> R1("1. Data Engineers"):::sub-topic
+            R1 --> R1a("Design/Build ETL, DW, Big Data")
+            R1 --> R1b("Data Quality & Governance")
+            R1 --> R1c("Owners of OLAP/Data Warehouse")
+
+            Roles --> R2("2. Data Analysts"):::sub-topic
+            R2 --> R2a("Understand Past, Find Patterns")
+
+            Roles --> R3("3. Data Scientists"):::sub-topic
+            R3 --> R3a("Predict Future")
+
+            Roles --> R4("4. Machine Learning Engineers"):::sub-topic
+            R4 --> R4a("Automate Processes")
+            R4 --> R4b("Deploy ML Models (e.g., Recommendations)")
+
+            Roles --> R5("5. Software Engineers"):::sub-topic
+            R5 --> R5a("Develop/Deploy Applications")
+            R5 --> R5b("Manage Databases (Smaller Cos.)")
+
+            Roles --> R6("6. Database Administrators (DBAs)"):::sub-topic
+            R6 --> R6a("Design & Manage Databases")
+            R6 --> R6b("Manage OLTP Databases")
+    </div>
+
+    <h3>II.C. Upstream vs. Downstream</h3>
+    <div class="mermaid">
+        graph LR
+            Streams["II.C. Upstream vs. Downstream"]:::main-topic
+
+            Streams --> U("1. Upstream"):::sub-topic
+            U --> U1("Data Providers/Sources")
+            U --> U2("DBAs, Software Engineers, Web Developers")
+            U --> U3("Initial Data Sources (SQL, CSV, APIs)")
+            U --> U4("Data Flows FROM Upstream")
+
+            Streams --> D("2. Downstream"):::sub-topic
+            D --> D1("Data Consumers")
+            D --> D2("Data Analysts, Data Scientists, Analytics Managers")
+            D --> D3("DEs Serve Processed Data TO Downstream")
+            D --> D4("DEs Sync Upstream Data with Downstream Needs")
+    </div>
+
+    <hr/>
+
+    <h2>III. Data Storage and Processing Systems</h2>
+
+    <h3>III.A. Database Management Systems (DBMS)</h3>
+    <div class="mermaid">
+        graph TD
+            DBMS_Main["III.A. Database Management Systems (DBMS)"]:::main-topic
+
+            DBMS_Main --> Purpose("1. Purpose")
+            Purpose --> Purpose_Def("Store data structured, easy query")
+            Purpose --> Purpose_Eff("Efficient for Millions/Billions of records")
+
+            DBMS_Main --> Ops("2. Operations")
+            Ops --> CRUD("CRUD (Create, Read, Update, Delete)")
+
+            DBMS_Main --> Types("3. Types")
+            Types --> Relational("a. Relational Databases (SQL)")
+            Relational --> Relational_Def("Structured Tables, Schema, Relationships")
+            Relational --> Relational_Ex("PostgreSQL, MySQL, SQL Server, Oracle")
+            Types --> NoSQL("b. NoSQL Databases")
+            NoSQL --> NoSQL_Def("Various formats (Key-Value, Document, Graph)")
+            NoSQL --> NoSQL_Work("Designed for different workloads, unstructured data")
+
+            DBMS_Main --> SQL_Lang("4. SQL (Structured Query Language)")
+            SQL_Lang --> SQL_Def("Language to communicate with DBs")
+            SQL_Lang --> SQL_Ops("Select, Insert, Update, Delete")
+            SQL_Lang --> SQL_Backbone("Backbone of Data Career")
+    </div>
+
+    <h3>III.B. OLTP (Online Transactional Processing) Systems</h3>
+    <div class="mermaid">
+        graph TD
+            OLTP_Main["III.B. OLTP Systems"]:::main-topic
+
+            OLTP_Main --> Purpose("1. Purpose")
+            Purpose --> Purpose_Txn("Process transactional data (Money transfers, Purchases)")
+
+            OLTP_Main --> Char("2. Characteristics")
+            Char --> FastOps("Highly efficient for fast Inserts, Updates, Reads")
+            Char --> RowBased("Primarily Row-Based Storage")
+
+            OLTP_Main --> Model("3. Modeling")
+            Model --> Normalization("Normalization (1NF, 2NF, 3NF)")
+            Normalization --> Norm_Purpose("Reduce duplication, organize data")
+
+            OLTP_Main --> Limit("4. Limitations")
+            Limit --> AnalyticalIneff("Not efficient for analytical workloads (Large aggregations)")
+
+            OLTP_Main --> Mgmt("5. Management")
+            Mgmt --> DBAs("Managed by DBAs")
+    </div>
+
+    <h3>III.C. OLAP (Online Analytical Processing) Systems / Data Warehouses</h3>
+    <div class="mermaid">
+        graph TD
+            OLAP_Main["III.C. OLAP Systems / Data Warehouses"]:::main-topic
+
+            OLAP_Main --> Purpose("1. Purpose")
+            Purpose --> Purpose_Analysis("Designed for analysis workloads")
+            Purpose --> Purpose_Hist("Efficient for large historical datasets")
+
+            OLAP_Main --> Char("2. Characteristics")
+            Char --> ColBased("Most often Column-Based Storage")
+            ColBased --> FasterReads("Faster reads for analytical queries")
+
+            OLAP_Main --> Mgmt("3. Management")
+            Mgmt --> DEs_Resp("Data Engineers responsible for building/managing")
+
+            OLAP_Main --> Examples("4. Examples")
+            Examples --> Ex_List("Snowflake, Redshift, BigQuery, Azure Synapse, Teradata")
+    </div>
+
+    <h3>III.D. ETL (Extract, Transform, Load) Pipelines</h3>
+    <div class="mermaid">
+        graph TD
+            ETL_Main["III.D. ETL Pipelines"]:::main-topic
+
+            ETL_Main --> Process("1. Process")
+            Process --> Extract("a. Extract")
+            Extract --> Ext_Def("Collecting raw data from sources (DBMS, APIs, Sensors)")
+            Process --> Transform("b. Transform")
+            Transform --> Trans_Def("Cleaning, Validating, Structuring (Duplicates, Nulls, Formats)")
+            Process --> Load("c. Load")
+            Load --> Load_Def("Storing transformed data into DW or Object Storage")
+
+            ETL_Main --> Automation("2. Automation")
+            Automation --> Auto_Benefit("Automate data movement, prevent manual work")
+
+            ETL_Main --> Layers("3. Data Warehouse Layers in ETL")
+            Layers --> Staging("a. Staging Layer")
+            Staging --> Staging_Def("Temporary/Persistent raw data before transformation")
+            Staging --> Staging_Avoid("Avoids querying source system directly")
+            Layers --> Core("b. Core Layer")
+            Core --> Core_Def("Transformed data pushed here")
+            Core --> Core_Content("Dimensional Data Model (Facts & Dimensions)")
+    </div>
+
+    <h3>III.E. ELT (Extract, Load, Transform)</h3>
+    <div class="mermaid">
+        graph TD
+            ELT_Main["III.E. ELT"]:::main-topic
+
+            ELT_Main --> Concept("Concept")
+            Concept --> ELT_Flow("Extract & Load to Staging/DW")
+            Concept --> ELT_Transform("Transform 'on the fly' using SQL in DW")
+
+            ELT_Main --> Trend("Gaining Traction")
+            Trend --> ModernStack("In modern data stacks")
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default', // You can try 'dark', 'forest', 'neutral'
+            // If you had click events for expand/collapse on subgraphs, you'd add securityLevel: 'loose' here.
+            // securityLevel: 'loose',
+            flowchart: {
+                htmlLabels: true, // Allows for more control over label appearance if needed
+                curve: 'linear' // or 'basis', 'monotoneX', etc.
+            }
+        });
+    </script>
+
+</body>
+</html>
