@@ -1,0 +1,2989 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../roadmap/module8/">
+      
+      
+        <link rel="next" href="../chapter_1_Introduction_to_Data_Engineering/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Overview - Data Engineering Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../webpage_style.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentals-of-data-engineering-your-guide-to-the-data-driven-world" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Data Engineering Wiki" class="md-header__button md-logo" aria-label="Data Engineering Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../roadmap/" class="md-tabs__link">
+          
+  
+  
+  🗺️ Road Map
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  📚 Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cheat-sheets/cheatsheet-overview/" class="md-tabs__link">
+          
+  
+  
+  📝 Cheat Sheets
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Data Engineering Wiki" class="md-nav__button md-logo" aria-label="Data Engineering Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Engineering Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🏠 Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🗺️ Road Map
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🗺️ Road Map
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🚀 Module 1 – DW & SQL Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🐍 Module 2 – Python ETL & CI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚡ Module 3 – Spark & Delta Performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌊 Module 4 – Streaming & Data Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ☁️ Module 5 – Azure Lakehouse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚙️ Module 6 – ADF & Synapse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📊 Module 7 – Fabric Lakehouse & Real-Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🤝 Module 8 – Interview & System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📚 Courses
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            📚 Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    💡 Fundamentals of Data Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            💡 Fundamentals of Data Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is Data Engineering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-is-data-engineering-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why is Data Engineering Needed?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-data-engineering-life-cycle-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Data Engineering Life Cycle / Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Data Engineering Life Cycle / Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-data-production-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Data Production (Data Generation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Data Ingestion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Data Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Data Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-data-serving-data-modelinganalysisreporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Data Serving (Data Modeling/Analysis/Reporting)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-key-roles-in-the-data-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Key Roles in the Data Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-data-generation-and-storage-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Data Generation and Storage Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Data Generation and Storage Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-data-generation-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Data Generation Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-data-storage-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Data Storage Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-processing-systems-oltp-vs-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Data Processing Systems: OLTP vs. OLAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Data Processing Systems: OLTP vs. OLAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-oltp-online-transactional-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. OLTP (Online Transactional Processing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-olap-online-analytical-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. OLAP (Online Analytical Processing)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-etl-extract-transform-load-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ETL (Extract, Transform, Load) Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ETL (Extract, Transform, Load) Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etl-vs-elt" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETL vs. ELT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-data-warehousing-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Data Warehousing Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Data Warehousing Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-dimensional-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Dimensional Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-schema-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Schema Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-slowly-changing-dimensions-scds" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Slowly Changing Dimensions (SCDs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-data-marts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4. Data Marts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-data-warehouse-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5. Data Warehouse Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-incremental-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.6. Incremental Loading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Data Lake
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-data-lake-vs-data-warehouse-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Data Lake vs. Data Warehouse Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-lakehouse-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Lakehouse Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Lakehouse Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medallion-architecture-cloud-data-lakehouse-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medallion Architecture (Cloud Data Lakehouse Pattern)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-file-formats-for-big-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. File Formats for Big Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-cloud-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cloud Data Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-important-tools-for-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Important Tools for Data Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-undercurrents-and-important-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Undercurrents and Important Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-engineering-explained-with-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Engineering: Explained with Amazon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Engineering: Explained with Amazon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-why-amazon-needs-data-engineering-making-smarter-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Amazon Needs Data Engineering – Making Smarter Decisions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-generation-the-raw-ingredients" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Generation – The Raw Ingredients:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-storage-the-pantry" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Data Storage – The Pantry:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-engineerings-role-the-chef-at-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data Engineering's Role – The Chef at Work:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-data-serving-the-plated-dish" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Data Serving – The Plated Dish:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_1_Introduction_to_Data_Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_2_Data_Engineering_Workflow_and_Core_Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Engineering Workflow & Core Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_3_Data_Storage_and_Processing_Systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Storage and Processing Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_4_Data_Warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Warehousing: A Deep Dive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_5_modern_data_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modern Data Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_6_big_data_distributed_computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Big Data & Distributed Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_7_cloud_data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🐍 Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            🐍 Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📊 Power BI Service & Admin
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            📊 Power BI Service & Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi-service/powerbi-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi-service/powerbi-service-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cheat Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi-service/documents/platform-foundations-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform Foundations & Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    💻 SQL Admin
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            💻 SQL Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql-admin/sql-admin-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📝 Cheat Sheets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            📝 Cheat Sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheat-sheets/cheatsheet-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheat-sheets/powerbi-service-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI Service Admin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is Data Engineering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-is-data-engineering-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why is Data Engineering Needed?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-data-engineering-life-cycle-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Data Engineering Life Cycle / Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Data Engineering Life Cycle / Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-data-production-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Data Production (Data Generation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Data Ingestion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Data Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Data Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-data-serving-data-modelinganalysisreporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Data Serving (Data Modeling/Analysis/Reporting)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-key-roles-in-the-data-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Key Roles in the Data Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-data-generation-and-storage-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Data Generation and Storage Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Data Generation and Storage Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-data-generation-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Data Generation Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-data-storage-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Data Storage Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-processing-systems-oltp-vs-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Data Processing Systems: OLTP vs. OLAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Data Processing Systems: OLTP vs. OLAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-oltp-online-transactional-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. OLTP (Online Transactional Processing)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-olap-online-analytical-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. OLAP (Online Analytical Processing)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-etl-extract-transform-load-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ETL (Extract, Transform, Load) Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ETL (Extract, Transform, Load) Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etl-vs-elt" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETL vs. ELT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-data-warehousing-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Data Warehousing Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Data Warehousing Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-dimensional-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1. Dimensional Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-schema-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2. Schema Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-slowly-changing-dimensions-scds" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3. Slowly Changing Dimensions (SCDs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-data-marts" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4. Data Marts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-data-warehouse-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5. Data Warehouse Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-incremental-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.6. Incremental Loading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-data-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Data Lake
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-data-lake-vs-data-warehouse-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Data Lake vs. Data Warehouse Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-lakehouse-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Lakehouse Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Lakehouse Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medallion-architecture-cloud-data-lakehouse-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medallion Architecture (Cloud Data Lakehouse Pattern)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-file-formats-for-big-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. File Formats for Big Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-cloud-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cloud Data Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-important-tools-for-data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Important Tools for Data Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-undercurrents-and-important-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Undercurrents and Important Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-engineering-explained-with-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Engineering: Explained with Amazon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Engineering: Explained with Amazon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-why-amazon-needs-data-engineering-making-smarter-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Amazon Needs Data Engineering – Making Smarter Decisions:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-generation-the-raw-ingredients" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Data Generation – The Raw Ingredients:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-storage-the-pantry" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Data Storage – The Pantry:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-data-engineerings-role-the-chef-at-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Data Engineering's Role – The Chef at Work:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-data-serving-the-plated-dish" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Data Serving – The Plated Dish:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fundamentals-of-data-engineering-your-guide-to-the-data-driven-world">Fundamentals of Data Engineering: Your Guide to the Data-Driven World</h1>
+<p>Welcome to the heart of how modern businesses thrive on data! In an era where data is often called the "new oil," <strong>Data Engineering</strong> is the critical field that refines this raw resource into something truly valuable.</p>
+<p>This guide will walk you through the core concepts, workflow, and essential tools of Data Engineering, using real-world examples to make complex ideas clear.</p>
+<hr />
+<h2 id="1-what-is-data-engineering">1. What is Data Engineering?</h2>
+<p>Data Engineering is essentially about taking <strong>raw, often messy data</strong>, refining it, and delivering it in the form of <strong>data models</strong> or <strong>cleaned, structured formats</strong> to stakeholders.</p>
+<p>Think of it like a <strong>skilled chef</strong> who takes raw ingredients, meticulously prepares them, cooks them to perfection, and serves a delicious, well-prepared dish. Just as a chef ensures every ingredient is ready for consumption, a Data Engineer ensures data is ready for analysis and decision-making.</p>
+<p>The core purpose of Data Engineering is to <strong>enable data-driven decision-making</strong> for businesses by making data usable and understandable.</p>
+<div class="mermaid">
+    graph TD
+        DE_Concept["Data Engineering: The 'Data Chef'"]:::main-topic
+        DE_Concept --> Raw["Raw, Messy Data (Ingredients)"]
+        DE_Concept --> Refine["Refine & Structure (Cooking Process)"]
+        DE_Concept --> Deliver["Deliver Data Models (Well-prepared Dish)"]
+        Refine --> MakeUsable("Make Data Usable & Understandable")
+        Deliver --> EnableDecisions("Enable Data-Driven Decisions")
+</div>
+
+<hr />
+<h2 id="2-why-is-data-engineering-needed">2. Why is Data Engineering Needed?</h2>
+<p>In today's competitive landscape, businesses can no longer afford to operate on assumptions. They need to <strong>understand their customers, increase profit, detect bottlenecks, and improve processes.</strong> While many decisions are based on gut feelings, data provides a <strong>factual understanding</strong>, leading to more accurate and impactful decisions.</p>
+<p>The demand for Data Engineers is skyrocketing due to the <strong>exponential increase in data generation</strong>. Companies are flooded with information, and without Data Engineers, this vast ocean of data remains untapped potential. Data Engineers are crucial for handling massive amounts of data and serving it to various consumers within an organization.</p>
+<hr />
+<h2 id="3-the-data-engineering-life-cycle-workflow">3. The Data Engineering Life Cycle / Workflow</h2>
+<p>The data engineering process can be broken down into a clear, iterative workflow. At its core, this workflow is built upon three main <strong>"Pillars of Data Engineering"</strong>: Data Production, Data Transformation, and Data Serving.</p>
+<div class="mermaid">
+    graph LR
+        subgraph DE_Workflow["Data Engineering Workflow Lifecycle"]
+            A[Data Production] --> B[Data Ingestion]
+            B --> C[Data Storage]
+            C --> D[Data Transformation]
+            D --> E[Data Serving]
+        end
+
+        subgraph Pillars["Pillars of Data Engineering"]
+            P1(Data Production) --> P2(Data Transformation)
+            P2 --> P3(Data Serving)
+        end
+</div>
+
+<p>Let's dive into each stage:</p>
+<h3 id="31-data-production-data-generation">3.1. Data Production (Data Generation)</h3>
+<p>This is the <strong>initial stage where data is created</strong> from various sources. Think of every interaction you have with a digital product or service.</p>
+<p><strong>Example: Amazon</strong>
+When you browse products, click a "Buy Now" button, add items to your cart, or leave a review on Amazon, you're constantly generating data. Beyond your clicks, Amazon's internal systems (inventory, shipping, server logs) and third-party partners (like FedEx tracking) also produce enormous amounts of data. This is all the "raw ingredients" arriving in the data kitchen.</p>
+<h3 id="32-data-ingestion">3.2. Data Ingestion</h3>
+<p>Once data is generated, it needs to be collected. <strong>Data ingestion</strong> involves aggregating data from different sources and bringing it into a centralized system. This often means setting up automated connections to continuously fetch new data.</p>
+<h3 id="33-data-storage">3.3. Data Storage</h3>
+<p>After ingestion, the data needs a place to live. <strong>Data storage</strong> refers to storing the ingested data at a specific location, which can vary depending on the data type and its intended use (more on this in Section 5).</p>
+<h3 id="34-data-transformation">3.4. Data Transformation</h3>
+<p>This is often considered the <strong>core of data engineering</strong> and where Data Engineers spend a significant portion of their time (often 70-80%). It involves cleaning, validating, structuring, and enriching raw data based on specific business logic.</p>
+<p><strong>Example: Amazon</strong>
+Imagine combining product details from one Amazon system with order details from another. If product dates are in "YYYY-MM-DD" and order dates are in "MM-DD-YYYY", a Data Engineer transforms them into a single, consistent format. They also clean up errors, remove duplicate entries, and ensure all data makes sense. This is like the chef peeling, chopping, and cooking the vegetables to make them edible and delicious.</p>
+<h3 id="35-data-serving-data-modelinganalysisreporting">3.5. Data Serving (Data Modeling/Analysis/Reporting)</h3>
+<p>Finally, after all the processing, the transformed data is made available for <strong>downstream users</strong> like Data Scientists, Data Analysts, or for building dashboards and machine learning models. This is like the chef plating the cooked dish beautifully, ready for the customers (business stakeholders) to enjoy and make decisions from.</p>
+<hr />
+<h2 id="4-key-roles-in-the-data-ecosystem">4. Key Roles in the Data Ecosystem</h2>
+<p>The data world is a team sport, with various roles collaborating to extract value from data.</p>
+<div class="mermaid">
+    graph TD
+        DataEcosystem["Key Roles in the Data Ecosystem"]:::main-topic
+
+        DataEcosystem --> SWE("Software Engineers")
+        SWE --> SWE_Desc("Develop core applications, manage smaller databases")
+
+        DataEcosystem --> DBA("Database Administrators (DBAs)")
+        DBA --> DBA_Desc("Design & manage databases, especially OLTP systems")
+
+        DataEcosystem --> DE("Data Engineers")
+        DE --> DE_Desc("Build ETL/ELT pipelines, DW, Big Data systems, ensure quality & governance")
+        DE --> DE_Analogy("The 'Data Plumber' connecting data sources to consumers")
+
+        DataEcosystem --> DA("Data Analysts")
+        DA --> DA_Desc("Answer 'what happened?', find patterns in historical data")
+
+        DataEcosystem --> DS("Data Scientists")
+        DS --> DS_Desc("Predict 'what can happen?', build predictive models")
+
+        DataEcosystem --> MLE("Machine Learning Engineers")
+        MLE --> MLE_Desc("Automate processes, deploy ML models to production")
+
+        DataEcosystem --> DataOps("DevOps / DataOps")
+        DataOps --> DataOps_Desc("Automate deployment, monitor systems, ensure observability")
+</div>
+
+<ul>
+<li><strong>Software Engineers:</strong> Primarily develop applications and write code for deployment. In smaller companies, they might also manage databases.</li>
+<li><strong>Database Administrators (DBAs):</strong> Design and manage databases, including building tables and columns. They typically manage OLTP (Online Transactional Processing) databases.</li>
+<li><strong>Data Engineers:</strong> The data "plumbers." They extract, transform, and load (ETL/ELT) data, build data warehouses, work with big data processing systems (like Spark, Hadoop, Kafka), handle data integration, quality checks, and governance.</li>
+<li><strong>Data Analysts:</strong> Answer questions about past events (e.g., "What was the sales revenue last quarter?") by finding patterns in historical data.</li>
+<li><strong>Data Scientists:</strong> Predict future outcomes based on past patterns (e.g., "What products are customers likely to buy next month?").</li>
+<li><strong>Machine Learning Engineers:</strong> Automate processes and deploy machine learning models (e.g., recommendation systems, fraud detection) into production systems.</li>
+<li><strong>DevOps/DataOps:</strong> Focus on automating deployment processes, monitoring data systems, ensuring observability, and incident reporting for data pipelines.</li>
+</ul>
+<hr />
+<h2 id="5-data-generation-and-storage-systems">5. Data Generation and Storage Systems</h2>
+<h3 id="51-data-generation-sources">5.1. Data Generation Sources</h3>
+<p>Data is constantly being generated from a multitude of sources within and outside an organization.</p>
+<div class="mermaid">
+    graph TD
+        Sources["Data Generation Sources"]:::main-topic
+        Sources --> A["Applications (Websites, Mobile Apps)"]
+        A --> A_Ex("User clicks, purchases, Browse history, reviews (e.g., Amazon.com, Netflix)")
+        Sources --> B["APIs (Application Programming Interfaces)"]
+        B --> B_Ex("Connectors to fetch info from apps or external services")
+        Sources --> C["RDBMS (Relational Database Management Systems)"]
+        C --> C_Ex("Transactional systems where application data is stored")
+        Sources --> D["IoT Devices/Sensors"]
+        D --> D_Ex("Data from smart devices, moving trucks, industrial sensors")
+        Sources --> E["Web & Social Media"]
+        E --> E_Ex("User activity, content, interactions")
+        Sources --> F["Logs & Machine Data"]
+        F --> F_Ex("Data from servers, networks, applications for monitoring")
+        Sources --> G["Third-Party Data"]
+        G --> G_Ex("Data from vendors (e.g., FedEx for shipping), external partners")
+</div>
+
+<h3 id="52-data-storage-systems">5.2. Data Storage Systems</h3>
+<p>Once generated, data needs to be stored efficiently. Different types of data and usage patterns require different storage solutions.</p>
+<div class="mermaid">
+    graph TD
+        StorageSystems["Data Storage Systems"]:::main-topic
+
+        StorageSystems --> DBMS("Database Management Systems (DBMS)")
+        DBMS --> RelationalDB("Relational Databases (SQL DBs)")
+        RelationalDB --> Rel_Char("Structured, tabular (rows/cols), predefined schema")
+        RelationalDB --> Rel_Lang("SQL: SELECT, INSERT, UPDATE, DELETE")
+        RelationalDB --> Rel_Model("Data Modeling: Normalization (1NF, 2NF, 3NF)")
+        RelationalDB --> Rel_Ex("PostgreSQL, MySQL, SQL Server, Oracle")
+
+        DBMS --> NoSQLDB("NoSQL Databases")
+        NoSQLDB --> NoSQL_Char("Flexible schema, various formats (key-value, document, graph)")
+        NoSQLDB --> NoSQL_Use("Good for unstructured/semi-structured data, specific workloads")
+        NoSQLDB --> NoSQL_Ex("MongoDB, Cassandra, Couchbase DB")
+
+        StorageSystems --> DataWarehouse("Data Warehouses")
+        DataWarehouse --> DW_Char("Optimized for analytical queries, structured data, column-based")
+
+        StorageSystems --> ObjectStorage("Object Storage (Data Lakes)")
+        ObjectStorage --> OS_Char("Stores raw data (any format) without predefined schema (schema-on-read)")
+        ObjectStorage --> OS_Use("Cost-effective, Big Data handling, flexible")
+        ObjectStorage --> OS_Ex("Amazon S3, Azure Data Lake Storage Gen2, Google Cloud Storage")
+</div>
+
+<ul>
+<li><strong>Database Management Systems (DBMS):</strong> General-purpose systems for storing structured data, allowing easy querying, retrieval, updating, and deletion.<ul>
+<li><strong>Relational Databases (SQL Databases):</strong> Store data in structured tables (rows and columns) with predefined schemas and relationships.<ul>
+<li><strong>Examples:</strong> PostgreSQL, MySQL, Microsoft SQL Server, Oracle.</li>
+<li><strong>Language:</strong> <strong>SQL</strong> (Structured Query Language) is used to communicate with them (SELECT, INSERT, UPDATE, DELETE).</li>
+<li><strong>Data Modeling (in OLTP):</strong> Often involves <strong>Normalization</strong> to reduce data redundancy by creating many linked tables.</li>
+</ul>
+</li>
+<li><strong>NoSQL Databases:</strong> Store data in various formats other than traditional rows and columns ("Not Only SQL").<ul>
+<li><strong>Formats:</strong> Key-value, column family, document, graph data.</li>
+<li><strong>Use Cases:</strong> Good for unstructured or semi-structured data and specific workloads where relational structures aren't ideal.</li>
+<li><strong>Examples:</strong> MongoDB, Cassandra.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data Warehouses:</strong> Optimized for analytical workloads, storing structured data for efficient querying of large datasets.</li>
+<li><strong>Object Storage (Data Lakes):</strong> Store vast amounts of raw data in its native format (structured, semi-structured, unstructured) without a predefined schema.<ul>
+<li><strong>Concept:</strong> "Dump all data as it is" into a storage location. Users then query the data directly, defining the schema "on read."</li>
+<li><strong>Advantages:</strong> Extreme flexibility, cost-effective storage, handles massive volumes, supports diverse users (Data Scientists).</li>
+<li><strong>Examples:</strong> Amazon S3, Azure Data Lake Storage Gen2 (ADLS Gen2), Google Cloud Storage (GCS).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="6-data-processing-systems-oltp-vs-olap">6. Data Processing Systems: OLTP vs. OLAP</h2>
+<p>Data storage systems are often categorized by how they process data: for transactions or for analysis.</p>
+<div class="mermaid">
+    graph TD
+        ProcessingSystems["Data Processing Systems"]:::main-topic
+
+        ProcessingSystems --> OLTP("OLTP (Online Transactional Processing)")
+        OLTP --> OLTP_Purp("Purpose: Day-to-day operations, transaction processing")
+        OLTP --> OLTP_Char("Characteristics:")
+        OLTP_Char --> RowBased("Row-based storage")
+        OLTP_Char --> FastCRUD("Fast inserts, updates, quick reads (individual records)")
+        OLTP_Char --> Normalized("Normalized data models")
+        OLTP --> OLTP_Use("Use Cases: E-commerce transactions, banking, inventory")
+        OLTP --> OLTP_Mgmt("Management: DBAs, Software Engineers")
+
+        ProcessingSystems --> OLAP("OLAP (Online Analytical Processing)")
+        OLAP --> OLAP_Purp("Purpose: Analysis workloads, historical data querying")
+        OLAP --> OLAP_Char("Characteristics:")
+        OLAP_Char --> ColBased("Column-based storage (faster aggregations)")
+        OLAP_Char --> OptimizedReads("Optimized for complex analytical queries")
+        OLAP_Char --> Denormalized("Often uses denormalized/dimensional models")
+        OLAP --> OLAP_Use("Use Cases: BI reporting, ML, historical analysis")
+        OLAP --> OLAP_Mgmt("Management: Data Engineers")
+</div>
+
+<h3 id="61-oltp-online-transactional-processing">6.1. OLTP (Online Transactional Processing)</h3>
+<ul>
+<li><strong>Purpose:</strong> Designed for processing <strong>transactional data</strong> and managing day-to-day operations.<ul>
+<li><strong>Example: Amazon's checkout system.</strong> When you buy something, that single purchase needs to be recorded quickly and accurately.</li>
+</ul>
+</li>
+<li><strong>Characteristics:</strong><ul>
+<li><strong>Row-based storage:</strong> Data is stored row by row, making it efficient for quickly inserting or updating individual records.</li>
+<li><strong>Fast inserts, updates, and quick reads:</strong> Optimized for CRUD (Create, Read, Update, Delete) operations on single records.</li>
+<li><strong>Normalized data models:</strong> Data is highly normalized to reduce redundancy.</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong> E-commerce transactions, banking applications, inventory updates.</li>
+<li><strong>Management:</strong> Typically managed by DBAs or software engineers.</li>
+</ul>
+<h3 id="62-olap-online-analytical-processing">6.2. OLAP (Online Analytical Processing)</h3>
+<ul>
+<li><strong>Purpose:</strong> Designed for <strong>analysis workloads</strong>, enabling analysis of large datasets (e.g., all sales over the last five years).<ul>
+<li><strong>Example: Amazon's sales dashboard.</strong> To see total revenue for all products in a specific region over the last quarter, an OLAP system would be used.</li>
+</ul>
+</li>
+<li><strong>Characteristics:</strong><ul>
+<li><strong>Column-based storage:</strong> Data is stored column by column, allowing for faster aggregation and analysis queries by reading only necessary columns without scanning full rows.</li>
+<li><strong>Optimized for reads:</strong> Efficient for complex analytical queries that aggregate data across many rows.</li>
+<li><strong>Denormalized data models:</strong> Often uses dimensional modeling (see Section 8).</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong> Business intelligence (BI) reporting, machine learning, historical analysis.</li>
+<li><strong>Management:</strong> Typically managed by Data Engineers.</li>
+</ul>
+<hr />
+<h2 id="7-etl-extract-transform-load-pipeline">7. ETL (Extract, Transform, Load) Pipeline</h2>
+<p><strong>ETL</strong> is the foundational process of moving data from operational systems (like OLTP databases) to analytical systems (like data warehouses).</p>
+<div class="mermaid">
+    graph TD
+        ETL_Process["ETL Process (Extract, Transform, Load)"]:::main-topic
+        Extract("1. Extract") --> Extract_Desc("Collect raw data from sources (DBs, APIs, Sensors)")
+        Transform("2. Transform") --> Trans_Desc("Clean, validate, structure, enrich data based on business logic")
+        Load("3. Load") --> Load_Desc("Move transformed data into target system (DW, Object Storage)")
+
+        Extract_Desc --> DataSources[Source Systems]
+        Trans_Desc --> DataQuality[Data Quality & Consistency]
+        Load_Desc --> TargetSystems[Data Warehouse / Data Lake]
+
+        subgraph Transformation_Examples["Transformation Examples"]
+            T1("Remove Duplicates")
+            T2("Handle Null Values")
+            T3("Standardize Formats (Dates, Data Types)")
+            T4("Aggregate Data")
+            T5("Merge Datasets")
+            T6("Generate New Columns")
+            T7("Filter Data")
+        end
+        Transform --> Transformation_Examples
+</div>
+
+<ul>
+<li><strong>Extract:</strong> Collecting raw data from various sources (DBMS, analytics tools, IoT sensors, APIs).</li>
+<li><strong>Transform:</strong> This is the crucial step where raw data becomes valuable. It involves cleaning, validating, structuring, and enriching data to make it suitable for analysis. This is where business rules are applied.<ul>
+<li><strong>Examples of Transformation:</strong> Removing duplicates, handling null values, standardizing data formats (e.g., dates, data types), aggregating data (e.g., total sales per day), merging datasets (e.g., combining customer info with order history), generating new columns (e.g., calculating profit margin), and filtering data (e.g., removing test transactions).</li>
+</ul>
+</li>
+<li><strong>Load:</strong> Moving the transformed data into a target system for querying and analysis.<ul>
+<li><strong>Load Destinations:</strong> Typically data warehouses (Snowflake, BigQuery, Redshift) or object storage (S3, GCS, Azure Data Lake).</li>
+</ul>
+</li>
+<li><strong>ETL Pipelines:</strong> These are automated processes that perform ETL operations regularly, ensuring data is fresh and available.</li>
+</ul>
+<h3 id="etl-vs-elt">ETL vs. ELT</h3>
+<p>While ETL has been traditional, <strong>ELT (Extract, Load, Transform)</strong> is gaining popularity with cloud-based data warehouses.</p>
+<div class="mermaid">
+    graph TD
+        Compare_ELT["ETL vs. ELT"]:::main-topic
+
+        Compare_ELT --> ETL_Flow("ETL: Extract -> Transform -> Load")
+        ETL_Flow --> ETL_Desc("Data transformed before loading into DW. Highly structured approach.")
+
+        Compare_ELT --> ELT_Flow("ELT: Extract -> Load -> Transform")
+        ELT_Flow --> ELT_Desc("Raw data loaded to staging/DW. Transformations applied 'on the fly' using SQL in DW.")
+        ELT_Flow --> ELT_Adv("Leverages DW compute power. Less initial processing for messy data.")
+</div>
+
+<ul>
+<li><strong>ETL:</strong> Data is processed and transformed <em>before</em> loading into the data warehouse. This is a highly structured approach.</li>
+<li><strong>ELT:</strong> Raw data is loaded into a staging area or directly into the data warehouse, and transformations are applied <em>on the fly</em> using SQL queries within the warehouse. This leverages the powerful compute capabilities of modern cloud data warehouses.</li>
+</ul>
+<hr />
+<h2 id="8-data-warehousing-concepts">8. Data Warehousing Concepts</h2>
+<p>Data warehouses are central to analytical data processing. Understanding how they're structured is key.</p>
+<h3 id="81-dimensional-modeling">8.1. Dimensional Modeling</h3>
+<p>This is a primary method to store data in a data warehouse, built around two types of tables:</p>
+<div class="mermaid">
+    graph TD
+        DM_Main["Dimensional Modeling"]:::main-topic
+        DM_Main --> FactTable["Fact Table"]
+        FactTable --> FT_Char("Quantitative, measurable data (e.g., sales amount, quantity)")
+        FactTable --> FT_Keys("Foreign keys to Dimension Tables")
+        FactTable --> FT_Central("Central table in a dimensional model")
+
+        DM_Main --> DimTable["Dimension Tables"]
+        DimTable --> DT_Char("Descriptive attributes, categorical info (e.g., product name, city, date)")
+        DimTable --> DT_Link("Multiple dimension tables linked to fact table")
+</div>
+
+<ul>
+<li><strong>Fact Table:</strong> Stores quantitative, measurable data points (e.g., sales amount, product quantity, revenue, profit) and foreign keys to dimension tables. It's the central table in a dimensional model.</li>
+<li><strong>Dimension Tables:</strong> Store descriptive attributes and categorical information about the business (e.g., product name, product category, user name, user city, date attributes). Multiple dimension tables usually link to a central fact table.</li>
+</ul>
+<h3 id="82-schema-types">8.2. Schema Types</h3>
+<p>Two common ways to arrange fact and dimension tables:</p>
+<div class="mermaid">
+    graph LR
+        SchemaTypes["Data Warehouse Schema Types"]:::main-topic
+
+        SchemaTypes --> StarSchema["Star Schema"]
+        StarSchema --> SS_Desc("Central fact table directly connected to multiple dimension tables")
+        StarSchema --> SS_Adv("Highly performant, faster queries, easier to manage (Most common)")
+
+        SchemaTypes --> SnowflakeSchema["Snowflake Schema"]
+        SnowflakeSchema --> SFS_Desc("More normalized star schema; dimension tables have sub-dimension tables")
+        SnowflakeSchema --> SFS_Disadv("Harder to manage, less common in practice")
+</div>
+
+<ul>
+<li><strong>Star Schema:</strong> A simple dimensional model with a single fact table at the center directly connected to multiple dimension tables, resembling a star. It's highly performant, faster for querying, and easier to manage, making it the most used in the industry.</li>
+<li><strong>Snowflake Schema:</strong> A more normalized version of the star schema where dimension tables have sub-dimension tables, forming a snowflake shape. It's harder to manage and less common in practice.</li>
+</ul>
+<h3 id="83-slowly-changing-dimensions-scds">8.3. Slowly Changing Dimensions (SCDs)</h3>
+<p>SCDs are strategies for handling changes in dimension values over time. For example, if a customer's address changes, how do you track that in historical sales data?</p>
+<div class="mermaid">
+    graph TD
+        SCDs["Slowly Changing Dimensions (SCDs)"]:::main-topic
+
+        SCDs --> SCD0("SCD Type 0: Fixed")
+        SCD0 --> SCD0_Desc("Dimension values don't change (e.g., Birth Date)")
+
+        SCDs --> SCD1("SCD Type 1: Overwrite (Upsert)")
+        SCD1 --> SCD1_Desc("New value overwrites old; no history maintained")
+        SCD1 --> SCD1_Use("Most frequently used (70-80%) due to simplicity/performance")
+
+        SCDs --> SCD2("SCD Type 2: New Row")
+        SCD2 --> SCD2_Desc("Adds a new row for each change; full history maintained (start/end date, active flag)")
+
+        SCDs --> SCD3("SCD Type 3: Partial History")
+        SCD3 --> SCD3_Desc("Stores current & previous values in separate columns in the same row")
+
+        SCDs --> SCD6("SCD Type 6: Hybrid")
+        SCD6 --> SCD6_Desc("Combines Type 1, 2, and 3 for comprehensive tracking")
+</div>
+
+<ul>
+<li><strong>SCD Type 0:</strong> Assumes the dimension will not change. Values are fixed (e.g., a product's SKU).</li>
+<li><strong>SCD Type 1 (Upsert):</strong> Overwrites old values with new ones, maintaining no history. This is the most frequently used SCD type due to its simplicity and performance (combines UPDATE for existing records and INSERT for new ones).</li>
+<li><strong>SCD Type 2:</strong> Maintains a complete history of changes by adding a new row for each change, using attributes like <code>start_date</code>, <code>expiry_date</code>, and an <code>is_active</code> flag. This allows tracking historical states.</li>
+<li><strong>SCD Type 3:</strong> Maintains partial history by storing the current and previous values in separate columns.</li>
+<li><strong>SCD Type 6:</strong> A combination of SCD1, SCD2, and SCD3 for comprehensive tracking.</li>
+</ul>
+<h3 id="84-data-marts">8.4. Data Marts</h3>
+<div class="mermaid">
+    graph TD
+        DataMarts["Data Marts"]:::main-topic
+        DataMarts --> DM_Desc("Subsets of a Data Warehouse")
+        DataMarts --> DM_Purpose("Serve analytical needs of specific departments/teams")
+        DataMarts --> DM_Benefit("Improve performance & relevance by focusing data access")
+</div>
+
+<ul>
+<li><strong>Data Marts:</strong> Subsets of a data warehouse designed to serve the analytical needs of specific departments or teams within an organization. They contain only the data relevant to that particular group, improving performance and relevance.</li>
+</ul>
+<h3 id="85-data-warehouse-layers">8.5. Data Warehouse Layers</h3>
+<p>Data warehouses often use layers to organize data as it flows through the system.</p>
+<div class="mermaid">
+    graph TD
+        DW_Layers["Data Warehouse Layers"]:::main-topic
+
+        DW_Layers --> StagingLayer("1. Staging Layer")
+        StagingLayer --> SL_Purpose("Intermediate layer for initially dumped extracted data")
+        StagingLayer --> SL_Types("Transient (temporary, truncated after use) OR Persistent (historical preservation)")
+
+        DW_Layers --> CoreLayer("2. Core Layer")
+        CoreLayer --> CL_Purpose("Transformed data from staging, structured for consumption")
+        CoreLayer --> CL_Content("Contains Dimensional Data Model (Fact & Dimension Tables)")
+</div>
+
+<ul>
+<li><strong>Staging Layer:</strong> An intermediate layer where extracted data is initially dumped. This layer can be <strong>Transient</strong> (temporary, deleted after use, most common) or <strong>Persistent</strong> (preserves historical data).</li>
+<li><strong>Core Layer:</strong> Where data is transformed from the staging layer and structured into fact and dimension tables for consumption by reports and analytics.</li>
+</ul>
+<h3 id="86-incremental-loading">8.6. Incremental Loading</h3>
+<div class="mermaid">
+    graph TD
+        IncrementalLoading["Incremental Loading"]:::main-topic
+        IncrementalLoading --> IL_Concept("Only new or changed data loaded from source to DW")
+        IncrementalLoading --> IL_Benefit("Saves computational resources & time")
+        IncrementalLoading --> IL_Standard("Standard practice in data engineering")
+</div>
+
+<ul>
+<li><strong>Incremental Loading:</strong> A data fetching strategy where only new or changed data is loaded from the source system into the data warehouse, rather than reloading the entire dataset. This saves computational resources and time and is standard practice.</li>
+</ul>
+<hr />
+<h2 id="9-data-lake">9. Data Lake</h2>
+<p>A <strong>Data Lake</strong> is a centralized repository that stores a vast amount of <strong>raw data</strong> in its native format (structured, semi-structured, and unstructured).</p>
+<div class="mermaid">
+    graph TD
+        DL_Main["Data Lake"]:::main-topic
+        DL_Main --> Concept("Concept: Store all raw data 'as is'")
+        Concept --> SchemaOnRead("Schema on Read: Define schema when you query, not when you store")
+        DL_Main --> Advantages("Advantages")
+        Advantages --> Flex("Flexibility: Any data type, no prior schema needed")
+        Advantages --> CostEff("Cost-effective: Significantly lower storage costs")
+        Advantages --> BigData("Big Data Handling: Efficient for massive volumes")
+        Advantages --> DiverseUsers("Supports diverse users: Data Scientists for ML, Analysts for raw exploration")
+        DL_Main --> Examples("Examples: Amazon S3, Azure Data Lake Storage Gen2 (ADLS Gen2), Google Cloud Storage (GCS)")
+</div>
+
+<ul>
+<li><strong>Concept:</strong> The idea is to "dump all data as it is" (e.g., CSV, Parquet, JSON) into a storage location. Users can then query the data from the data lake itself, defining the schema "on read" (meaning the schema is applied at query time, not at ingest time).</li>
+<li><strong>Advantages:</strong><ul>
+<li><strong>Flexibility:</strong> Can store any type of data without prior schema definition.</li>
+<li><strong>Cost-effective:</strong> Storage costs are significantly lower compared to data warehouses.</li>
+<li><strong>Big Data Handling:</strong> Efficiently deals with massive volumes of data.</li>
+<li><strong>Supports diverse users:</strong> Ideal for data scientists and data analysts who need access to raw data for various modeling and analysis tasks.</li>
+</ul>
+</li>
+<li><strong>Examples:</strong> Amazon S3, Azure Data Lake Storage Gen2 (ADLS Gen2), Google Cloud Storage (GCS).</li>
+</ul>
+<hr />
+<h2 id="10-data-lake-vs-data-warehouse-comparison">10. Data Lake vs. Data Warehouse Comparison</h2>
+<p>Understanding the differences is crucial for choosing the right tool for the job.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Data Warehouse</th>
+<th style="text-align: left;">Data Lake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Data Structure</strong></td>
+<td style="text-align: left;">Structured</td>
+<td style="text-align: left;">Unstructured, semi-structured, structured</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Schema</strong></td>
+<td style="text-align: left;">Pre-defined (schema on write)</td>
+<td style="text-align: left;">Schema on read (schema defined after data stored)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Users</strong></td>
+<td style="text-align: left;">Business Analysts, BI Developers</td>
+<td style="text-align: left;">Data Scientists, Data Analysts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Use Cases</strong></td>
+<td style="text-align: left;">Batch processing, BI reporting, traditional analytics</td>
+<td style="text-align: left;">Stream processing, machine learning, real-time analysis, raw data exploration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data State</strong></td>
+<td style="text-align: left;">Processed, clean, refined</td>
+<td style="text-align: left;">Raw, undefined</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data Volume</strong></td>
+<td style="text-align: left;">Smaller data (typically millions of rows)</td>
+<td style="text-align: left;">Large data (billions of rows, petabytes)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost</strong></td>
+<td style="text-align: left;">Higher storage and processing costs</td>
+<td style="text-align: left;">Lower storage costs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Performance</strong></td>
+<td style="text-align: left;">Optimized for structured queries and reports</td>
+<td style="text-align: left;">Flexible, better for diverse workloads</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-lakehouse-architecture">11. Lakehouse Architecture</h2>
+<p>The <strong>Lakehouse</strong> is a new paradigm that combines the best aspects of data lakes and data warehouses. It's designed to give you the flexibility and cost-effectiveness of a data lake with the performance and structured querying capabilities of a data warehouse.</p>
+<div class="mermaid">
+    graph TD
+        Lakehouse["Lakehouse Architecture"]:::main-topic
+        Lakehouse --> Concept("Concept: Fuses DW & DL benefits")
+        Concept --> Mechanism("Data in low-cost Data Lake, with a 'metadata/abstraction layer' on top")
+        Mechanism --> AddsFeatures("Adds DW functionalities: Dimensional Modeling, Schema Enforcement, ACID Transactions")
+        Lakehouse --> Benefits("Benefits:")
+        Benefits --> LowCost("Low storage cost of Data Lake")
+        Benefits --> DW_Perf("High performance & structured querying of Data Warehouse")
+</div>
+
+<ul>
+<li><strong>Concept:</strong> Data is stored in a cost-effective data lake, but a "metadata layer" or "abstraction layer" is applied on top to enable data warehousing functionalities like dimensional modeling, schema enforcement, and ACID transactions.</li>
+<li><strong>Benefits:</strong> Offers the low cost and flexibility of data lakes with the performance and structured querying capabilities of data warehouses.</li>
+</ul>
+<h3 id="medallion-architecture-cloud-data-lakehouse-pattern">Medallion Architecture (Cloud Data Lakehouse Pattern)</h3>
+<p>A common implementation of the Lakehouse architecture, defining data quality layers:</p>
+<div class="mermaid">
+    graph LR
+        Medallion["Medallion Architecture"]:::main-topic
+        Medallion --> Bronze("Bronze (Raw) Layer")
+        Bronze --> B_Desc("Stores raw, unfiltered data, no changes")
+
+        Medallion --> Silver("Silver (Transformed/Cleaned) Layer")
+        Silver --> S_Desc("Applies transformations, cleaning, basic aggregations")
+        Silver --> S_Schema("Schema enforced and evolved here")
+
+        Medallion --> Gold("Gold (Curated/Consumption) Layer")
+        Gold --> G_Desc("Highly refined, aggregated, business-ready data")
+        Gold --> G_Use("Suitable for BI, ML (Fact & Dimension tables)")
+
+        Bronze -- Data Flow --> Silver
+        Silver -- Data Flow --> Gold
+</div>
+
+<ul>
+<li><strong>Bronze (Raw) Layer:</strong> Stores raw, unfiltered data as it arrives from sources with no changes. This is the initial landing zone.</li>
+<li><strong>Silver (Transformed/Cleaned) Layer:</strong> Applies transformations, cleaning, and basic aggregations to the bronze layer data. This is where schema is enforced and evolved.</li>
+<li><strong>Gold (Curated/Consumption) Layer:</strong> Stores highly refined, aggregated, and business-ready data, often in fact and dimension tables. This layer is suitable for direct consumption by business intelligence and machine learning applications.</li>
+</ul>
+<hr />
+<h2 id="12-file-formats-for-big-data">12. File Formats for Big Data</h2>
+<p>How data is stored on disk significantly impacts query performance, especially with large datasets.</p>
+<div class="mermaid">
+    graph TD
+        FileFormats["File Formats for Big Data"]:::main-topic
+
+        FileFormats --> RowBased("Row-Based File Formats")
+        RowBased --> RB_Char("Store data row by row")
+        RB_Char --> RB_Adv("Efficient for writing and updating individual records")
+        RB_Char --> RB_Use("Used more in OLTP systems")
+        RB_Char --> RB_Ex("Examples: CSV, Avro")
+
+        FileFormats --> ColumnBased("Column-Based File Formats")
+        ColumnBased --> CB_Char("Store data column by column")
+        CB_Char --> CB_Adv("Highly efficient for analytical queries (read only necessary columns)")
+        CB_Char --> CB_Use("Used more in OLAP/Big Data analytics")
+        CB_Char --> CB_Ex("Examples: Parquet, ORC")
+
+        FileFormats --> DeltaFormat["Delta Format (on Parquet)"]
+        DeltaFormat --> DF_Main("Open table format built on top of Parquet")
+        DeltaFormat --> DF_Features("Key Features:")
+        DF_Features --> TL("Transaction Log: Enables Data Time Travel (versioning)")
+        DF_Features --> SE("Schema Evolution: Add/change columns without breaking pipelines")
+        DF_Features --> ACID("ACID Transactions: Atomicity, Consistency, Isolation, Durability (data reliability)")
+        DF_Features --> CostEff("Cost-effective: Leverages low-cost Parquet storage + transactional capabilities")
+</div>
+
+<ul>
+<li><strong>Row-Based File Formats:</strong> Store data row by row (e.g., CSV, Avro).<ul>
+<li><strong>Advantages:</strong> Efficient for writing and updating individual records. Used more in OLTP systems.</li>
+</ul>
+</li>
+<li><strong>Column-Based File Formats:</strong> Store data column by column (e.g., Parquet, ORC).<ul>
+<li><strong>Advantages:</strong> Highly efficient for analytical queries as it allows reading only necessary columns without scanning entire rows. Used more in OLAP/Big Data analytics.</li>
+</ul>
+</li>
+<li><strong>Delta Format:</strong> An open table format built on top of Parquet.<ul>
+<li><strong>Key Features:</strong><ul>
+<li><strong>Transaction Log:</strong> Stores metadata and history of operations, enabling <strong>Data Time Travel</strong> (versioning) to revert to previous states of data.</li>
+<li><strong>Schema Evolution:</strong> Allows adding or changing columns to a table without breaking existing data pipelines.</li>
+<li><strong>ACID Transactions:</strong> Provides Atomicity, Consistency, Isolation, and Durability, ensuring data reliability and integrity, similar to traditional databases.</li>
+<li><strong>Cost-effective:</strong> Leverages low-cost storage of Parquet files while adding transactional capabilities.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="13-cloud-data-engineering">13. Cloud Data Engineering</h2>
+<p>Cloud computing involves renting computational resources (servers, storage, networking) from third-party providers (like AWS, Azure, GCP) via the internet, instead of owning and maintaining them on-premises.</p>
+<div class="mermaid">
+    graph TD
+        CloudDE["Cloud Data Engineering"]:::main-topic
+
+        CloudDE --> Benefits("Benefits of Cloud Computing")
+        Benefits --> Scalability("Scalability: Easily scale resources up/down")
+        Benefits --> CostEff("Cost-effectiveness: Pay-per-use model")
+        Benefits --> Maint("Reduced Maintenance: Provider handles infra, security")
+        Benefits --> DR("Disaster Recovery: Built-in resilience")
+
+        CloudDE --> ServiceModels("Cloud Service Models")
+        ServiceModels --> IaaS("IaaS (Infrastructure as a Service): VMs, Networks (e.g., AWS EC2)")
+        ServiceModels --> PaaS("PaaS (Platform as a Service): App running platform (e.g., AWS Lambda)")
+        ServiceModels --> SaaS("SaaS (Software as a Service): Ready-to-use software (e.g., Google Suite)")
+
+        CloudDE --> Providers("Major Cloud Providers & Data Services")
+        Providers --> AWS("Amazon Web Services (AWS)")
+        AWS --> AWS_Services("S3, Redshift, Glue, EMR, Kinesis, RDS, DynamoDB, Athena")
+        AWS --> AWS_Example("Example Architecture (Dream11): Kafka -> S3 -> Spark -> Redshift -> BI")
+
+        Providers --> Azure("Microsoft Azure")
+        Azure --> Azure_Services("ADLS Gen2, Synapse Analytics, Data Factory, Databricks, Event Hub, Power BI")
+        Azure --> Azure_Example("Example Architecture: Event Hub/IoT Hub -> ADLS Gen2 (Bronze via ADF) -> Databricks (Silver) -> Synapse (Gold) -> Power BI")
+
+        Providers --> GCP("Google Cloud Platform (GCP)")
+        GCP --> GCP_Services("Cloud Storage, BigQuery, DataProc, Pub/Sub, Cloud Functions")
+
+        CloudDE --> HybridCloud("Hybrid Cloud: Multiple clouds / On-premise + Cloud")
+</div>
+
+<ul>
+<li><strong>Benefits:</strong><ul>
+<li><strong>Scalability:</strong> Easily scale resources up or down as needed, without physical hardware limitations.</li>
+<li><strong>Cost-effectiveness:</strong> Pay-per-use model, only paying for consumed resources.</li>
+<li><strong>Reduced Maintenance:</strong> Cloud providers handle infrastructure maintenance, security, and replication.</li>
+<li><strong>Disaster Recovery:</strong> Built-in resilience against hardware failures or natural disasters.</li>
+</ul>
+</li>
+<li><strong>Service Models:</strong><ul>
+<li><strong>IaaS (Infrastructure as a Service):</strong> Provides raw computing infrastructure (e.g., virtual machines like AWS EC2).</li>
+<li><strong>PaaS (Platform as a Service):</strong> Provides a platform for running applications, abstracting away infrastructure management (e.g., AWS Lambda).</li>
+<li><strong>SaaS (Software as a Service):</strong> Provides ready-to-use software applications over the internet (e.g., Google Suite).</li>
+</ul>
+</li>
+<li><strong>Major Cloud Providers:</strong><ul>
+<li><strong>Amazon Web Services (AWS):</strong> Widely used, especially by startups.<ul>
+<li><strong>Key Data Services:</strong> S3 (object storage/data lake), Redshift (data warehouse), Glue (serverless Spark ETL), EMR (managed Spark), Kinesis (real-time streaming), RDS (relational databases), DynamoDB (NoSQL), Athena (ad-hoc query engine).</li>
+<li><strong>Example Architecture (Dream11):</strong> Uses Kafka for ingestion, S3 as data lake, Spark (EMR/Glue) for ETL, Redshift as data warehouse, Athena for ad-hoc analysis, Looker/Jupyter for visualization/data science.</li>
+</ul>
+</li>
+<li><strong>Microsoft Azure:</strong> Growing rapidly, popular with enterprise-level companies.<ul>
+<li><strong>Key Data Services:</strong> Azure Data Lake Storage Gen2 (ADLS Gen2) (data lake), Azure Synapse Analytics (data warehouse, SQL pool), Azure Data Factory (ETL, orchestration, low-code), Azure Databricks (managed Apache Spark), Azure Event Hub (streaming), Power BI (reporting).</li>
+<li><strong>Example Architecture (Typical Azure Lakehouse):</strong> Data streams from Event Hub/IoT Hub to ADLS Gen2 (bronze layer via ADF), processed by Databricks (silver layer), then loaded to Synapse Analytics (gold layer for facts/dimensions), consumed by Power BI and data scientists.</li>
+</ul>
+</li>
+<li><strong>Google Cloud Platform (GCP):</strong> Also offers robust data services.<ul>
+<li><strong>Key Data Services:</strong> Cloud Storage (data lake), BigQuery (data warehouse, serverless), DataProc (managed Spark), Pub/Sub (messaging/streaming), Cloud Functions (serverless compute).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hybrid Cloud:</strong> Using services from multiple cloud providers or a combination of on-premise and cloud resources.</li>
+</ul>
+<hr />
+<h2 id="14-important-tools-for-data-engineering">14. Important Tools for Data Engineering</h2>
+<p>To become a proficient Data Engineer, mastering certain tools and technologies is essential.</p>
+<div class="mermaid">
+    graph TD
+        DE_Tools["Important Tools for Data Engineering"]:::main-topic
+
+        DE_Tools --> Langs("Programming Languages")
+        Langs --> Python("Python (Pandas, ETL, Ingestion)")
+        Langs --> ScalaJava("Scala / Java (for Spark, Flink, Kafka)")
+
+        DE_Tools --> SQL_Tool("SQL (Structured Query Language)")
+        SQL_Tool --> SQL_Core("Non-negotiable: SELECT, INSERT, UPDATE, DELETE, Joins, Aggs, Window Funcs, Data Modeling")
+
+        DE_Tools --> Linux("Linux Commands (Basic)")
+        Linux --> Linux_Use("Interact with servers (most run Linux)")
+
+        DE_Tools --> DW_Tools("Data Warehouses")
+        DW_Tools --> Snowflake("Snowflake (Cloud-agnostic, highly demanded)")
+        DW_Tools --> BigQuery("BigQuery (Google's DW)")
+        DW_Tools --> Redshift("Redshift (AWS's DW)")
+
+        DE_Tools --> ProcessingTools("Data Processing Frameworks")
+        ProcessingTools --> Spark("Apache Spark (Big Data: Batch & Streaming)")
+        Spark --> Spark_Concepts("DataFrames, Transformations, Actions, Lazy Evaluation, UDFs, Partitioning")
+        Spark --> Databricks_M("Databricks (Managed Spark)")
+        ProcessingTools --> Kafka("Apache Kafka (Real-time Streaming & Ingestion)")
+        ProcessingTools --> Flink("Apache Flink (Real-time Analytics, Stream Processing)")
+
+        DE_Tools --> OrchestrationTools("Data Orchestration Tools")
+        OrchestrationTools --> Airflow("Apache Airflow (Widely used scheduler)")
+        OrchestrationTools --> ModernOrch("Modern Tools: Dagster, Mage, Prefect")
+
+        DE_Tools --> ModernStackTools("Modern Data Stack Tools")
+        ModernStackTools --> Ingestion("Ingestion: Fivetran, Airbyte, Stitch")
+        ModernStackTools --> Transformation("Transformation: DBT (Data Build Tool)")
+        ModernStackTools --> BI_Viz("BI/Visualization: Tableau, Power BI, Looker")
+        ModernStackTools --> Quality("Data Quality: Great Expectations")
+        ModernStackTools --> Metadata("Metadata: OpenLineage, DataHub")
+</div>
+
+<ul>
+<li><strong>Programming Languages:</strong><ul>
+<li><strong>Python:</strong> Highly recommended due to its ease of learning, extensive packages (e.g., Pandas for data transformation, working with various file formats), and widespread industry use for ETL and data ingestion.</li>
+<li><strong>Scala/Java:</strong> Also relevant, especially since many open-source big data frameworks (like Apache Spark) are written in Java.</li>
+</ul>
+</li>
+<li><strong>SQL (Structured Query Language):</strong> Non-negotiable. The backbone for communicating with databases. Essential for SELECT, INSERT, UPDATE, DELETE operations, data types, table creation, joins, aggregation functions, subqueries, CTEs, window functions, and data modeling.</li>
+<li><strong>Linux Commands:</strong> Basic commands (<code>cd</code>, <code>ls</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, <code>cat</code>, <code>grep</code>, <code>ssh</code>) for interacting with servers, as most online servers run on Linux.</li>
+<li><strong>Data Warehouses:</strong><ul>
+<li><strong>Snowflake:</strong> Cloud-independent, highly demanded, excellent for learning data warehousing concepts.</li>
+<li><strong>BigQuery:</strong> Google's data warehouse, a popular choice.</li>
+<li><strong>Redshift:</strong> AWS's data warehouse.</li>
+</ul>
+</li>
+<li><strong>Data Processing Frameworks:</strong><ul>
+<li><strong>Apache Spark:</strong> Very important for processing big data (batch and streaming). Concepts include DataFrames, transformations, actions, lazy evaluation, UDFs, partitioning, and RDDs. Databricks provides a managed Spark environment.</li>
+<li><strong>Apache Kafka:</strong> Essential for real-time data streaming and ingestion. Data producers send data to Kafka, and consumers process it.</li>
+<li><strong>Apache Flink:</strong> Used for real-time analytics and stream processing.</li>
+</ul>
+</li>
+<li><strong>Data Orchestration Tools:</strong> Manage and schedule data pipelines (ETL jobs) to run in a coordinated manner, especially when dependencies exist.<ul>
+<li><strong>Apache Airflow:</strong> One of the most widely used tools.</li>
+<li><strong>Modern Tools:</strong> Dagster, Mage, Prefect (often quicker to learn than Airflow).</li>
+</ul>
+</li>
+<li><strong>Modern Data Stack Tools:</strong> A combination of new tools designed to simplify data operations.<ul>
+<li><strong>Ingestion:</strong> Fivetran, Airbyte, Stitch.</li>
+<li><strong>Transformation:</strong> <strong>DBT</strong> (Data Build Tool).</li>
+<li><strong>BI/Visualization:</strong> Tableau, Power BI, Looker, Data Studio.</li>
+<li><strong>Data Quality:</strong> Great Expectations.</li>
+<li><strong>Metadata:</strong> OpenLineage, DataHub.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="15-undercurrents-and-important-concepts">15. Undercurrents and Important Concepts</h2>
+<p>These are fundamental aspects to consider when building robust and reliable data solutions.</p>
+<div class="mermaid">
+    graph TD
+        Undercurrents["Undercurrents & Supporting Concepts"]:::main-topic
+
+        Undercurrents --> DataSecurity("Data Security")
+        DataSecurity --> SecurityConcepts("Confidentiality, Integrity, Availability")
+        DataSecurity --> SecurityMeasures("Encryption, Access Control, Data Classification, Network Security")
+        DataSecurity --> DataMasking("Data Masking: Hide sensitive info")
+
+        Undercurrents --> DataMgmt("Data Management / Governance")
+        DataMgmt --> GovernanceConcepts("Discoverability, Definitions, Accountability")
+
+        Undercurrents --> DataOps("DataOps")
+        DataOps --> DataOps_Desc("Automating & monitoring data systems, observability, incident reporting")
+
+        Undercurrents --> DataArch("Data Architecture")
+        DataArch --> OperationalArch("Operational Arch. ('Why'): Business Goals (CX, Efficiency)")
+        DataArch --> TechnicalArch("Technical Arch. ('How'): Technologies, Methodologies")
+        TechnicalArch --> ArchPrinciples("Principles: Simplicity, Right Tools, Scale, Automation, Security")
+
+        Undercurrents --> Orchestration("Orchestration")
+        Orchestration --> Orchestration_Desc("Coordinating, scheduling, managing dependent tasks in pipelines")
+
+        Undercurrents --> SWE_BP("Software Engineering Best Practices")
+        SWE_BP --> SWE_BP_Desc("Applying SWE principles to ETL/transform code (Scalability, Maintainability, Testing)")
+
+        Undercurrents --> UpDownStream("Upstream & Downstream")
+        UpDownStream --> Upstream("Upstream: Data Sources (DBAs, SWEs)")
+        UpDownStream --> Downstream("Downstream: Data Consumers (Analysts, DS, Reporting)")
+</div>
+
+<ul>
+<li><strong>Data Security:</strong> Ensuring data is protected from unauthorized access, modification, or destruction.<ul>
+<li><strong>Concepts:</strong> <strong>Confidentiality</strong> (authorized access only), <strong>Integrity</strong> (accuracy and completeness), <strong>Availability</strong> (data accessible when needed).</li>
+<li><strong>Measures:</strong> Encryption, access control, data classification, network security.</li>
+<li><strong>Data Masking:</strong> A technique to hide sensitive information (e.g., credit card numbers, SSNs) by replacing it with random or masked data.</li>
+</ul>
+</li>
+<li><strong>Data Management/Governance:</strong> Ensuring data is organized, discoverable, and understood.<ul>
+<li><strong>Concepts:</strong> <strong>Data Discoverability</strong> (easy to find data), <strong>Definitions</strong> (understanding column meanings), <strong>Accountability</strong> (identifying data owners).</li>
+</ul>
+</li>
+<li><strong>DataOps:</strong> Focuses on automating and monitoring data systems and pipelines, including observability and incident reporting.</li>
+<li><strong>Data Architecture:</strong> Designing systems to support evolving data needs, involving careful evaluation of trade-offs.<ul>
+<li><strong>Operational Architecture ("Why"):</strong> Focuses on defining business goals and requirements (e.g., improving customer experience, increasing operational efficiency).</li>
+<li><strong>Technical Architecture ("How"):</strong> Focuses on choosing specific technologies and methodologies to meet operational goals. Principles include simplicity, choosing the right tools, building for scale and flexibility, embedding automation, and prioritizing security.</li>
+</ul>
+</li>
+<li><strong>Orchestration:</strong> Coordinating, scheduling, and managing tasks within data pipelines, especially when they are dependent on each other.</li>
+<li><strong>Software Engineering Best Practices:</strong> Applying principles of programming, software design (scalability, design patterns), testing, and debugging when writing ETL and transformation code.</li>
+<li><strong>Upstream and Downstream:</strong> Describes the flow of data relative to a Data Engineer.<ul>
+<li><strong>Upstream:</strong> Sources of data (e.g., DBAs, Software Engineers managing source databases/APIs).</li>
+<li><strong>Downstream:</strong> Consumers of data (e.g., Data Analysts, Data Scientists, reporting systems, BI tools).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="data-engineering-explained-with-amazon">Data Engineering: Explained with Amazon</h2>
+<p>Let's break down the fundamentals of data engineering using the example of a familiar business like <strong>Amazon</strong>.</p>
+<p>Imagine Amazon as a vast, bustling marketplace, operating entirely online. Every action a customer takes, and every internal process the company runs, generates an enormous amount of information. <strong>Data engineering is essentially about making sense of all this information</strong> so that Amazon can run its business better and serve its customers more effectively.</p>
+<p>You can think of a data engineer as a skilled <strong>chef or a plumber for data</strong>.</p>
+<p>Here’s why Amazon needs data engineering and how it works:</p>
+<h3 id="1-why-amazon-needs-data-engineering-making-smarter-decisions">1. Why Amazon Needs Data Engineering – Making Smarter Decisions:</h3>
+<ul>
+<li><strong>Understanding Customers:</strong> Amazon wants to know what you like, what you buy, and how you interact with their website to provide better services and personalized recommendations.</li>
+<li><strong>Increasing Profit:</strong> By understanding trends and customer behavior, Amazon can optimize its operations, potentially leading to more sales and higher profits.</li>
+<li><strong>Improving Operations:</strong> They need to identify problems (like delays in shipping or issues with payment processing) and fix them. Data can show exactly where bottlenecks are.</li>
+<li><strong>Moving Beyond Assumptions:</strong> Instead of just guessing what might be happening, Amazon wants to make decisions based on solid facts provided by data. Every action taken in Amazon's data ecosystem aims to create value for the business, whether it's saving costs, improving processes, or understanding customers.</li>
+</ul>
+<h3 id="2-data-generation-the-raw-ingredients">2. Data Generation – The Raw Ingredients:</h3>
+<ul>
+<li><strong>Every Click and Action Creates Data:</strong> When you browse products on Amazon, click on a "Buy Now" button, add items to your cart, or leave a review, you are generating data.</li>
+<li><strong>Beyond Customer Interactions:</strong> Data also comes from other sources, like Amazon's internal systems (inventory management, shipping logistics), logs from their servers, and interactions with third-party vendors (like FedEx).</li>
+<li><strong>Think of this as all the raw, sometimes messy, ingredients arriving in the chef's kitchen</strong> – potatoes, onions, carrots, spices, but all mixed together.</li>
+</ul>
+<h3 id="3-data-storage-the-pantry">3. Data Storage – The Pantry:</h3>
+<ul>
+<li>Initially, all this raw data gets stored in specialized systems called <strong>Database Management Systems (DBMS)</strong>, often referred to as <strong>OLTP (Online Transactional Processing) databases</strong>. These databases are like Amazon's cash registers, very good at quickly recording individual transactions (like a single purchase). They store data in rows, making it fast to insert or update a specific record.</li>
+<li>However, these OLTP systems aren't designed for quickly analyzing large amounts of historical data (e.g., all sales over the last five years).</li>
+<li>To handle that, Amazon moves and stores data in <strong>data warehouses</strong> (also called <strong>OLAP - Online Analytical Processing databases</strong>). These are specifically designed for fast analysis of vast amounts of data, usually storing data in columns rather than rows, which is more efficient for large-scale queries. Examples include Amazon Redshift or Snowflake.</li>
+<li>Amazon also uses <strong>data lakes</strong> (like AWS S3), which are massive storage areas where all raw data – structured, unstructured, or semi-structured (like text from customer reviews or images) – can be dumped as is, before any major cleaning or structuring. Data lakes are very cheap for storage and offer flexibility because you decide how to structure the data when you read it, not when you store it.</li>
+</ul>
+<h3 id="4-data-engineerings-role-the-chef-at-work">4. Data Engineering's Role – The Chef at Work:</h3>
+<ul>
+<li>The data engineer's main job is to build the "pipes" and "processes" that <strong>extract</strong> this raw data from its various sources (OLTP databases, sensor data, third-party APIs), <strong>transform</strong> it into a clean, consistent, and usable format, and then <strong>load</strong> it into the data warehouse or data lake for analysis. This process is known as <strong>ETL (Extract, Transform, Load)</strong> or sometimes <strong>ELT (Extract, Load, Transform)</strong>.</li>
+<li><strong>Transformation is key:</strong> Imagine combining your product details from one system with order details from another. If product dates are in "YYYY-MM-DD" and order dates are in "MM-DD-YYYY", a data engineer transforms them into a single, consistent format. They also clean up errors, remove duplicate entries, and ensure all data makes sense. This is like the chef peeling, chopping, and cooking the vegetables to make them edible and delicious.</li>
+<li>The goal of transformation is to organize data into a proper structure so that it can be easily visualized and understood.</li>
+</ul>
+<h3 id="5-data-serving-the-plated-dish">5. Data Serving – The Plated Dish:</h3>
+<ul>
+<li>Once the data is clean, transformed, and loaded into the data warehouse or data lake, it's ready to be served.</li>
+<li><strong>Data Analysts</strong> at Amazon use this data to understand what has happened (e.g., "What was the sales revenue of Product X last year compared to the last five years?") and create dashboards and reports for business leaders.</li>
+<li><strong>Data Scientists and Machine Learning Engineers</strong> use this data to predict what will happen (e.g., "How many units of Product X will be sold in the next six months?") and build things like Amazon's personalized recommendation system, showing you products you might like based on your past behavior.</li>
+<li>This is like the chef plating the cooked dish beautifully, ready for the customers (business stakeholders) to enjoy and make decisions from.</li>
+</ul>
+<p>In essence, data engineering at Amazon ensures that all the vast amounts of raw data generated are effectively collected, processed, and made available in a usable format to help the company make data-driven decisions, optimize operations, and improve customer experience. It's the backbone that enables other data professionals (like data analysts and data scientists) to extract valuable insights.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "search.highlight", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

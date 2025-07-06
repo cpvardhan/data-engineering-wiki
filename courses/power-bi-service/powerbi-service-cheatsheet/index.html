@@ -1,0 +1,1959 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../powerbi-service-overview/">
+      
+      
+        <link rel="next" href="../documents/platform-foundations-architecture/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Cheat Sheet - Data Engineering Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../webpage_style.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#power-bi-service-cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Data Engineering Wiki" class="md-header__button md-logo" aria-label="Data Engineering Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Engineering Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cheat Sheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠 Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../roadmap/" class="md-tabs__link">
+          
+  
+  
+  🗺️ Road Map
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../fundamentals/overview/" class="md-tabs__link">
+          
+  
+  
+  📚 Courses
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cheat-sheets/cheatsheet-overview/" class="md-tabs__link">
+          
+  
+  
+  📝 Cheat Sheets
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Data Engineering Wiki" class="md-nav__button md-logo" aria-label="Data Engineering Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Engineering Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🏠 Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🗺️ Road Map
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🗺️ Road Map
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🚀 Module 1 – DW & SQL Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🐍 Module 2 – Python ETL & CI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚡ Module 3 – Spark & Delta Performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌊 Module 4 – Streaming & Data Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ☁️ Module 5 – Azure Lakehouse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚙️ Module 6 – ADF & Synapse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📊 Module 7 – Fabric Lakehouse & Real-Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/module8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🤝 Module 8 – Interview & System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📚 Courses
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            📚 Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    💡 Fundamentals of Data Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            💡 Fundamentals of Data Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_1_Introduction_to_Data_Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_2_Data_Engineering_Workflow_and_Core_Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Engineering Workflow & Core Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_3_Data_Storage_and_Processing_Systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Storage and Processing Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_4_Data_Warehousing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Warehousing: A Deep Dive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_5_modern_data_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modern Data Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_6_big_data_distributed_computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Big Data & Distributed Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/chapter_7_cloud_data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🐍 Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            🐍 Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📊 Power BI Service & Admin
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            📊 Power BI Service & Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerbi-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cheat Sheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cheat Sheet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-service-overview-the-cloud-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟡 Power BI Service Overview: The Cloud Command Center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workspaces-your-collaborative-sandboxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Workspaces: Your Collaborative Sandboxes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports-the-interactive-storytellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reports: The Interactive Storytellers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards-executive-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Dashboards: Executive Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-vs-dashboard-a-quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      🆚 Report vs Dashboard: A Quick Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-apps-simplified-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Power BI Apps: Simplified Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-license-types-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      💳 Power BI License Types &amp; Pricing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-security-safeguarding-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Power BI Security: Safeguarding Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Power BI Security: Safeguarding Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workspace-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-security-layers-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Additional Security Layers &amp; Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-refresh-gateways-keeping-insights-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Data Refresh &amp; Gateways: Keeping Insights Fresh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-key-service-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Other Key Service Components
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/platform-foundations-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform Foundations & Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    💻 SQL Admin
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            💻 SQL Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql-admin/sql-admin-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📝 Cheat Sheets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            📝 Cheat Sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheat-sheets/cheatsheet-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheat-sheets/powerbi-service-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI Service Admin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-service-overview-the-cloud-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟡 Power BI Service Overview: The Cloud Command Center
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workspaces-your-collaborative-sandboxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Workspaces: Your Collaborative Sandboxes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports-the-interactive-storytellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Reports: The Interactive Storytellers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboards-executive-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Dashboards: Executive Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-vs-dashboard-a-quick-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      🆚 Report vs Dashboard: A Quick Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-apps-simplified-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Power BI Apps: Simplified Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-license-types-pricing" class="md-nav__link">
+    <span class="md-ellipsis">
+      💳 Power BI License Types &amp; Pricing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-bi-security-safeguarding-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Power BI Security: Safeguarding Your Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Power BI Security: Safeguarding Your Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workspace-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-security-layers-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Additional Security Layers &amp; Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-refresh-gateways-keeping-insights-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Data Refresh &amp; Gateways: Keeping Insights Fresh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-key-service-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Other Key Service Components
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+
+<h1 id="power-bi-service-cheat-sheet">🚀 Power BI Service Cheat Sheet</h1>
+<p><em>Master the essential concepts of Power BI Service for publishing, sharing, and collaborating on your data insights.</em>  </p>
+<hr />
+<h2 id="power-bi-service-overview-the-cloud-command-center">🟡 Power BI Service Overview: The Cloud Command Center</h2>
+<p>The <strong>Power BI Service</strong> is the secure, cloud-based platform by Microsoft that serves as the central hub for your business intelligence ecosystem. It's where the magic of data sharing, collaboration, and consumption truly happens after you've built your reports in Power BI Desktop.</p>
+<ul>
+<li><strong>📁 Repository:</strong> Host your <strong>.PBIX</strong> files—reports, dashboards, datasets—all in one place.  </li>
+<li><strong>🔒 Secure Sharing:</strong> Seamless collaboration across your organization (and beyond).  </li>
+<li><strong>⏰ Refresh &amp; Alerts:</strong> Automated data refreshes and data-driven alerts keep insights up to date.  </li>
+<li><strong>🌐 Anywhere Access:</strong> Consume via web browser or mobile app on any device.</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+
+    participant DS   as "Data Sources"
+    participant PBD  as "Power BI Desktop"
+    participant PBIS as "Power BI Service"
+    participant EU   as "End Users"
+
+    PBD  -&gt;&gt; PBIS : Publish Report (.PBIX)
+    PBIS -&gt;&gt; EU   : Share &amp; Collaborate
+    EU   -&gt;&gt; PBIS : Consume via Web/Mobile
+    PBIS -&gt;&gt; DS   : Schedule Refresh (via Gateway)
+</code></pre>
+<div align="center"> <strong>🌊 Power BI Ecosystem Flow</strong></div>
+
+<hr />
+<h2 id="workspaces-your-collaborative-sandboxes">🗂️ Workspaces: Your Collaborative Sandboxes</h2>
+<p>A <strong>Workspace</strong> is a container for organizing and collaborating on related Power BI content (Reports, Dashboards, Datasets, Dataflows).</p>
+<ul>
+<li><strong>My Workspace:</strong> Personal sandbox—private, not directly shareable.  </li>
+<li><strong>Shared/App Workspace:</strong> Team collaboration hub; source for <strong>Power BI Apps</strong>.  </li>
+<li><strong>Capacity:</strong>  </li>
+<li><strong>Pro license:</strong> 10 GB per workspace  </li>
+<li><strong>Premium/Fabric:</strong> up to 100 TB  </li>
+</ul>
+<pre class="mermaid"><code>graph LR
+    A[Workspace]
+    A -- Private --&gt; B(My Workspace)
+    A -- Collaborative --&gt; C(Shared/App Workspace)
+    C -- Publishes --&gt; D(Power BI Apps)</code></pre>
+<div align="center"> <strong>📊 Workspace Types</strong> </div>
+
+</details>
+<p><strong>💡 When to Use:</strong><br />
+- <strong>My Workspace:</strong> Drafts &amp; personal exploration.<br />
+- <strong>Shared/App Workspace:</strong> Team builds &amp; published Apps.</p>
+<hr />
+<h2 id="reports-the-interactive-storytellers">📊 Reports: The Interactive Storytellers</h2>
+<p>A <strong>Report</strong> is a multi-page document of visuals, charts, and tables from one dataset.</p>
+<ul>
+<li>Built in Power BI Desktop, published to Service.  </li>
+<li>Rich interactivity: filters, slicers, drill-through.  </li>
+<li>Ideal for deep exploration &amp; detailed storytelling.</li>
+</ul>
+<p><strong>💡 Use Reports When:</strong><br />
+- You need multi-page, interactive analysis.<br />
+- Users must slice/dice and drill down.</p>
+<hr />
+<h2 id="dashboards-executive-snapshots">🖼️ Dashboards: Executive Snapshots</h2>
+<p>A <strong>Dashboard</strong> is a single-page canvas of pinned visuals (tiles) from one or more reports.</p>
+<ul>
+<li>Created in Power BI Service only.  </li>
+<li>Combines visuals across reports/datasets.  </li>
+<li>Perfect for high-level KPI monitoring and data-driven alerts.</li>
+</ul>
+<p><strong>💡 Use Dashboards When:</strong><br />
+- You need a one-page executive overview.<br />
+- Metrics must trigger immediate notifications.</p>
+<hr />
+<h2 id="report-vs-dashboard-a-quick-comparison">🆚 Report vs Dashboard: A Quick Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Report</th>
+<th>Dashboard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pages</strong></td>
+<td>Multi-page for deep analysis</td>
+<td>Single-page “one-pager”</td>
+</tr>
+<tr>
+<td><strong>Creation Tool</strong></td>
+<td>Power BI Desktop</td>
+<td>Power BI Service only</td>
+</tr>
+<tr>
+<td><strong>Underlying Data</strong></td>
+<td>Single dataset</td>
+<td>Multiple reports/datasets</td>
+</tr>
+<tr>
+<td><strong>Interactivity</strong></td>
+<td>High (filters, slicers, drill-through)</td>
+<td>Limited (clicking tile navigates)</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Detailed analysis &amp; deep dives</td>
+<td>KPI monitoring &amp; quick checks</td>
+</tr>
+<tr>
+<td><strong>Alerts</strong></td>
+<td>❌</td>
+<td>✅ data-driven alerts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="power-bi-apps-simplified-distribution">📦 Power BI Apps: Simplified Distribution</h2>
+<p>A <strong>Power BI App</strong> bundles curated reports and dashboards for broad consumption.</p>
+<ul>
+<li>Built in App Workspaces; delivers a view-only experience.  </li>
+<li>Simplifies sharing with large audiences without workspace access.</li>
+</ul>
+<p><strong>💡 When to Use Apps:</strong><br />
+- To distribute polished content at scale.<br />
+- For version-controlled, production-ready experiences.</p>
+<p><strong>💳 Viewer Licensing</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Viewer License</th>
+<th>Required?</th>
+<th>Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Free</strong></td>
+<td>✅</td>
+<td>If App is on Premium/Fabric capacity</td>
+</tr>
+<tr>
+<td><strong>Pro</strong></td>
+<td>✅</td>
+<td>Standard Pro workspace (publisher &amp; viewer both need Pro)</td>
+</tr>
+<tr>
+<td><strong>PPU</strong></td>
+<td>✅</td>
+<td>Personal Premium (paginated reports, AI, 48 refreshes/day)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="power-bi-license-types-pricing">💳 Power BI License Types &amp; Pricing</h2>
+<p>Microsoft offers flexible licensing for various needs, from individual use to enterprise-wide deployments.</p>
+<table>
+<thead>
+<tr>
+<th>License Type</th>
+<th>Cost (USD)</th>
+<th>Sharing</th>
+<th>Key Features / Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Free</strong></td>
+<td>$0</td>
+<td>❌ no sharing</td>
+<td>Individual analysis; view content in Premium capacity</td>
+</tr>
+<tr>
+<td><strong>Pro</strong></td>
+<td>~$10/user/month</td>
+<td>✅ Pro↔Pro</td>
+<td>Team collaboration; shared workspaces; 8 refreshes/day</td>
+</tr>
+<tr>
+<td><strong>PPU</strong></td>
+<td>~$20/user/month</td>
+<td>✅ PPU↔PPU</td>
+<td>All Pro + Premium features (paginated, AI) ; 48 refreshes/day</td>
+</tr>
+<tr>
+<td><strong>Premium/Fabric</strong></td>
+<td>From $262/month</td>
+<td>✅ with Free</td>
+<td>Dedicated resources; enterprise-scale; advanced AI; auto-scaling</td>
+</tr>
+</tbody>
+</table>
+<p><em>Costs approximate; vary by region &amp; enterprise agreements.</em></p>
+<hr />
+<h2 id="power-bi-security-safeguarding-your-data">🔐 Power BI Security: Safeguarding Your Data</h2>
+<h3 id="workspace-roles">Workspace Roles</h3>
+<p>Assign roles to control content management:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Key Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Full control: manage access, publish apps, delete content</td>
+</tr>
+<tr>
+<td><strong>Member</strong></td>
+<td>Create/edit content, publish apps, schedule refreshes; cannot manage access</td>
+</tr>
+<tr>
+<td><strong>Contributor</strong></td>
+<td>Create/edit content; cannot publish apps—ideal for devs</td>
+</tr>
+<tr>
+<td><strong>Viewer</strong></td>
+<td>View-only access to published content</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User
+    participant Report
+    participant Dataset
+    participant RLS as RLS Roles (DAX)
+
+    User-&gt;&gt;Report: Access Report
+    Report-&gt;&gt;Dataset: Request Data
+    Dataset-&gt;&gt;RLS: Check Role
+    RLS--&gt;&gt;Dataset: Apply Filter
+    Dataset--&gt;&gt;Report: Return Filtered Data
+    Report--&gt;&gt;User: Display Filtered View</code></pre>
+<div align="center"> <strong>🔒 RLS Flow</strong></div>
+</details>
+<p><strong>Row-Level Security (RLS):</strong> Defined in Desktop, managed in Service to filter rows per user.</p>
+<hr />
+<h2 id="additional-security-layers-best-practices">🛡️ Additional Security Layers &amp; Best Practices</h2>
+<table>
+<thead>
+<tr>
+<th>Security Layer</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Azure Active Directory (AAD) identity verification</td>
+</tr>
+<tr>
+<td><strong>Authorization</strong></td>
+<td>Workspace roles &amp; RLS govern data access</td>
+</tr>
+<tr>
+<td><strong>Encryption</strong></td>
+<td>Data encrypted at rest &amp; in transit (HTTPS/TLS)</td>
+</tr>
+<tr>
+<td><strong>Tenant Settings</strong></td>
+<td>Admin controls for export, sharing, and sensitivity policies</td>
+</tr>
+<tr>
+<td><strong>Sensitivity Labels</strong></td>
+<td>Classification via Microsoft Purview (e.g., “Confidential”)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practices:</strong>
+- Principle of least privilege<br />
+- Use dynamic RLS for scalability<br />
+- Enforce MFA for all users<br />
+- Apply sensitivity labels to sensitive reports<br />
+- Audit workspace access &amp; usage logs regularly  </p>
+<hr />
+<h2 id="data-refresh-gateways-keeping-insights-fresh">🔄 Data Refresh &amp; Gateways: Keeping Insights Fresh</h2>
+<ul>
+<li><strong>Data Refresh:</strong> Updates service datasets from sources.  </li>
+<li><strong>Data Gateway:</strong> Secure bridge to on-premises data (SQL Server, local files).  </li>
+<li><strong>Scheduled Refresh:</strong> Pro (8/day), Premium/Fabric (48/day).</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant PBIS as Power BI Service
+    participant GW as Data Gateway
+    participant ODS as On-Prem Data Source
+
+    PBIS-&gt;&gt;GW: Request Refresh
+    GW-&gt;&gt;ODS: Fetch Data
+    ODS--&gt;&gt;GW: Return Data
+    GW--&gt;&gt;PBIS: Forward Data
+    PBIS-&gt;&gt;PBIS: Update Dataset</code></pre>
+<div align="center"> <strong>🔁 Refresh Flow</strong></div>
+
+<hr />
+<h2 id="other-key-service-components">⚙️ Other Key Service Components</h2>
+<ul>
+<li><strong>Datasets:</strong> Import vs DirectQuery modes for data storage &amp; query.  </li>
+<li><strong>Dataflows:</strong> Self-service ETL to prepare &amp; reuse data.  </li>
+<li><strong>Datamarts:</strong> Managed Azure SQL DB for analytics between flows &amp; warehouses.  </li>
+<li><strong>Deployment Pipelines:</strong> (Premium/PPU) Manage content lifecycle across dev→test→prod.</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant RawData
+    participant Dataflows
+    participant Datasets
+    participant Datamarts
+    participant Reports
+
+    RawData-&gt;&gt;Dataflows: Prepare Data
+    Dataflows-&gt;&gt;Datasets: Load Data
+    Dataflows-&gt;&gt;Datamarts: Load Data
+    Datasets-&gt;&gt;Reports: Build Reports
+    Datamarts-&gt;&gt;Reports: Build Reports</code></pre>
+<div align="center"> <strong>🔧 Advanced Components Flow</strong></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "search.highlight", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
